@@ -1,4 +1,4 @@
-# ReactSearchSci Frontend
+# SearchSci Frontend
 
 Welcome to ReactSearchSci, a collaborative project that empowers users to delve into the world of scientific literature with ease. This React.js powered frontend provides an intuitive interface for searching, filtering, and saving articles. Authenticated users can seamlessly explore, read, and manage their favorite scientific publications.
 
@@ -12,7 +12,7 @@ Welcome to ReactSearchSci, a collaborative project that empowers users to delve 
 ## Getting Started
 1. **Clone the repository:**
     ```bash
-    git clone [repository-url]
+    git clone https://github.com/Imeneallouche/SearchSci-Frontend.git
     ```
 
 2. **Install Dependencies:**
@@ -29,12 +29,12 @@ Welcome to ReactSearchSci, a collaborative project that empowers users to delve 
     Open your browser and navigate to http://localhost:3000/
 
 ## Project Members
-- John Doe (GitHub: [johndoe](https://github.com/johndoe))
-- Jane Smith (GitHub: [janesmith](https://github.com/janesmith))
-- [Member3]
-- [Member4]
-- [Member5]
-- [Member6]
+- Imène ALLOUCHE        (GitHub: https://github.com/Imeneallouche/)
+- Imène LOUNI           (GitHub: https://github.com/Imene2499)         
+- Ikram DEBBIH          (GitHub: https://github.com/Ikram-DH18)
+- Hadjer BOUZARA        (GitHub: https://github.com/BHadjer)
+- Nada KOUADRI          (GitHub: https://github.com/NadaKOUADRI)
+- Fatima Zohra GUEDDA    (GitHub; https://github.com/Zola245)
 
 Feel free to contribute, report issues, or reach out to the project members. Happy exploring the scientific realm!
 
