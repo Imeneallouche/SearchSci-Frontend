@@ -7,7 +7,6 @@ Welcome to ReactSearchSci, a collaborative project that empowers users to delve 
 - **Flexible Filtering:** Filter results by keywords, authors, institutions, and publication dates
 - **Detailed Views:** View comprehensive article details, including text and PDF formats
 - **Favorites:** Save and revisit favorite articles for future reference
-- **History:** Access a list of previously saved scientific articles
 
 ## Getting Started
 1. **Clone the repository:**
