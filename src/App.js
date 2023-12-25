@@ -1,7 +1,5 @@
-import './App.css'
-import GererModerateursPage from './Pages/Admin/GererModerateursPage'
-import ListeArticles from './Pages/Moderateur/ListeArticles'
-import DeleteModerateurPopUp from './Components/DeleteModerateurPopUp'
+import "./App.css";
+import ListeArticles from "./Pages/Moderateur/ListeArticles";
 
 function App() {
   return (
