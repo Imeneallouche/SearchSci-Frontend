@@ -1,39 +1,25 @@
-.App {
-  text-align: center;
-}
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+html {
+  user-select: text;
+  box-sizing: border-box;
+  font-size: calc(7px + 0.45vw);
+  scroll-behavior: smooth;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  font-family: "Poppins", sans-serif;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
+body {
+  padding: 0%;
+  margin: 0%;
 }
