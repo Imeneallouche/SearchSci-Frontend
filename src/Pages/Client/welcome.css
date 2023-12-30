@@ -66,6 +66,10 @@
     cursor: pointer;
     width: 150px; /* Largeur fixe des boutons */
   }
+
+  .gray-bg {
+    background-color: #ccc; /* Gris */
+  }
   
   body {
     background-image: url('../../assets/bgtp2.jpg'); /* Remplacez 'chemin_vers_votre_image.jpg' par le chemin de votre image */

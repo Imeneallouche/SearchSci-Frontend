@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useState } from "react";
 import './welcome.css'; 
 
 
 function Welcome() {
+  const [isDeleteClicked, setIsDeleteClicked] = useState(false);
+  const [isEditClicked, setIsEditClicked] = useState(false);
+
+  
+  const handleDeleteClick = () => {
+    setIsDeleteClicked(!isDeleteClicked);
+  };
+
+  const handleEditClick = () => {
+    setIsEditClicked(!isEditClicked);
+  };
 
 
     return (
@@ -23,11 +34,33 @@ function Welcome() {
     Welcome to science space, a collaborative project that empowers users to delve into the world of scientific literature with ease.
     Welcome to science space, collaborative project that empowers users to delve into the world of scientific literature with ease.
    </p>
-  </div> 
-  <div className="buttons">
-    <button className="blue-button">Login</button>
-    <button className="blue-button">Create Account</button>
   </div>
+
+
+
+
+  <div className="buttons">
+            <button
+               className={`blue-button ${isDeleteClicked ? "gray-bg" : ""}`}
+              onClick={handleDeleteClick}
+            >
+             Login
+            </button>
+            <button
+              className={`blue-button ${isEditClicked ? "gray-bg" : ""}`}
+              onClick={handleEditClick}
+            >
+              Create Account
+            </button>
+          </div>
+
+
+
+
+
+
+
+
 </div>
 </div>
 
