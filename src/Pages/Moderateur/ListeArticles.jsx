@@ -18,9 +18,11 @@ function ListeArticles() {
           <img className="w-6" src={traits} alt="" />
         </button>
         <p className="font-semibold">
-          <span className="text-[#FFBE00]">S</span>CI
+          <span className="text-[#FFBE00]">S</span>
+          <span>CI</span>
           <span className="text-[#50B3C5]">EN</span>
-          <span className="text-[#C93227]">S</span>PACE
+          <span className="text-[#C93227]">S</span>
+          <span>PACE</span>
         </p>
       </div>
       <div>
