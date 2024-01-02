@@ -10,6 +10,9 @@ export const routers = {
   FILTER_ARTICLES: "/FilterArticles",
   FAVORITE_ARTICLES: "/FavoriteArticles",
   ADD_MODERATOR: "/AddModerator",
+  GERER_MODERATOR: "/GererModerator",
+  UPLOAD_ARTICLE: "/UploadArticle",
+  LISTE_ARTICLES: "/ListeArticles",
 };
 
 export const BACKEND_URL = "http://localhost:5000";

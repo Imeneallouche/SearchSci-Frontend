@@ -8,6 +8,8 @@ import SignUpPage from "./Pages/Client/SignUpPage";
 import FilterArticlesPage from "./Pages/Client/filterArticlesPage";
 import FavoriteArticlesPage from "./Pages/Client/favoriteArticlesPage";
 import AddModeratorPage from "./Pages/Admin/addModeratorPage";
+import GererModerateursPage from "./Pages/Admin/GererModerateursPage";
+import UploadArticle from "./Pages/Admin/UploadArticle";
 
 function App() {
   return (
@@ -32,6 +34,22 @@ function App() {
           <Route
             path={routers.FILTER_ARTICLES}
             Component={FilterArticlesPage}
+            exact
+          />
+          <Route
+            path={routers.GERER_MODERATOR}
+            Component={GererModerateursPage}
+            exact
+          />
+
+          <Route
+            path={routers.UPLOAD_ARTICLE}
+            Component={UploadArticle}
+            exact
+          />
+          <Route
+            path={routers.LISTE_ARTICLES}
+            Component={ListeArticles}
             exact
           />
         </Routes>
