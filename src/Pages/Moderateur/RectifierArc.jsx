@@ -1,11 +1,8 @@
 import React, { useState } from "react";
-import { useEffect } from 'react';
-//import {useNavigate} from 'react-router-dom'
 import './MdetailsAr.css' ;
+import { useEffect } from 'react';
 
-function MdetailsAr() {
- // const navigate =useNavigate();
-  const id =2;
+function RectifierArc() {
   
   const [isFavorite, setIsFavorite] = useState(false);
   const [isDeleteClicked, setIsDeleteClicked] = useState(false);
@@ -25,7 +22,9 @@ function MdetailsAr() {
 
 
 
-  const [mdetailsAr, setMdetailsAr] = useState([]);
+
+
+  const [rectifierArc, setRectifierArc] = useState([]);
   const [references, setReferences] = useState([]);
   const [auteurs, setAuteurs] = useState([]);
 
@@ -39,7 +38,7 @@ function MdetailsAr() {
         console.log("refernces:",data.Article.references);
         
 
-        setMdetailsAr(data.Article);
+        setRectifierArc(data.Article);
         setReferences(data.Article.references);
         setAuteurs(data.Article.auteurs);
         
@@ -53,23 +52,13 @@ function MdetailsAr() {
 
 
 
-
-
-
-
-
-
-
-
-
   return (
     <div className="min-h-screen relative ">
-
-      <h1 className="text-4xl font-semibold text-black absolute md:top-40 text-center md:right-30">
-      {mdetailsAr && mdetailsAr.titre}
+      <h1 className="text-4xl font-bold text-black absolute md:top-40 text-center md:right-30 mt-20">
+       Rectifier Article
       </h1>
       <div className="  relative">
-        <a href={mdetailsAr && mdetailsAr.urlPdf} className="text-blue-500 absolute md:top-60 md:right-30 ml-80 ">
+        <a href={rectifierArc && rectifierArc.urlPdf} className="text-blue-500 absolute md:top-60 md:right-30 ml-80 ">
           [VIEW PDF]
         </a>
       </div>
@@ -108,125 +97,90 @@ function MdetailsAr() {
       </span>
       <div className=" min-h-screen flex items-center ml-80 ">
         <div className=" font-semibold text-black text-left  ">
-
-
-
-
-        <div className="author-info">
-        <strong>Auteurs:</strong> 
-        {auteurs
-      ?auteurs.map((auteur) => {
-      return <p className="mb-6 mt-6">
-       {auteur.full_name}, {auteur.email}, {auteur.institution.nom}, {auteur.institution.adress}  
-    </p>
-
-}): null
-       }
-      
-      </div>
-
-
-
-
-
-
-
-
-
         
-          <p className="mb-6 mt-6">
-            <strong>Résumé:</strong> {mdetailsAr && mdetailsAr.resume}
-           
-          </p>
-          <p className="mb-6 mt-6">
-            <strong>Mots cle:</strong>  {mdetailsAr && mdetailsAr.motsCles}
-            
-          </p>
-          <p className="mb-6 mt-6">
-            <strong>Texte integral:</strong>  {mdetailsAr && mdetailsAr.texteIntegral}
-          </p>
 
-        
+
+          <div className="input-container">
+            <strong>Titre Article:</strong>
+            <input className="input-large" type="text" value={rectifierArc && rectifierArc.titre}/>
+          </div>
+
          
-          <div className="author-info">
-          <strong>Réferences:</strong>
-          {references
-      ?references.map((reference ) => {
-      return <p className="mb-6 mt-6">
-        {reference.titre}
-    </p>
+          <div className="input-container">
+  <strong>Auteurs:</strong>
+  {auteurs
+    ? auteurs.map((auteur, index) => (
+        <div key={index}>
+          <input
+            className="input-large"
+            type="text"
+            value={`${"\u2022"} ${auteur.full_name}, ${auteur.email}, ${auteur.institution.nom}, ${auteur.institution.adress}`}
+            readOnly
+          />
+        </div>
+      ))
+    : null}
+</div>
 
-}): null
-       }
 
-       </div>
+
+
+         <div className="input-container">
+            <strong>Mots cle:</strong>
+            <input className="input-large" type="text" value={rectifierArc && rectifierArc.motsCles} />
+          </div>
+
+          <div className="input-container">
+            <strong>Resume:</strong>
+            <input className="input-large" type="text" value={rectifierArc && rectifierArc.resume} />
+          </div>
+
+
+          <div className="input-container">
+            <strong>Texte Integral:</strong>
+            <input className="input-large" type="text" value={rectifierArc && rectifierArc.texteIntegral} />
+          </div>
+
+
+         
+
+
+
+
+
+          <div className="input-container">
+            <strong>Réference:</strong>
+
+
+
+             {references
+    ? references.map((reference, index) => (
+        <div key={index}>
+          <input
+            className="input-large"
+            type="text"
+            value={`${"\u2022"} ${reference.titre}`}
+            readOnly
+          />
+        </div>
+      ))
+    : null}
+          </div>
+
         
-
-
-
-
-
-
-
-
 
           <div className="buttons">
-
-
-
-
-
-
             <button
                className={`red-button ${isDeleteClicked ? "gray-bg" : ""}`}
-              onClick={(e) => {
-             const url = 'http://127.0.0.1:8000/api/supprimer_article'+ id 
-             fetch(url,{method: 'DELETE'})
-             .then((response )=> {
-              if (!response.ok){ throw new Error ('spmething wrong') }
-
-            // return response.json()
-           // navigate (' /ListeArticles')
-            })
-          
-            
-
-
-
-
-             .catch((e)   =>  {
-              console.log(e);
-             })
-              
-
-
-              }}>
-
-
-
-
-
-              Supprimer l'article
-
-
-
-
-
+              onClick={handleDeleteClick}
+            >
+              Annuler changements
             </button>
-
-
-
-
-
-
-
-
-
             <button
               className={`blue-button ${isEditClicked ? "gray-bg" : ""}`}
               onClick={handleEditClick}
             >
-              Rectifier l'article
+              Valider changements
             </button>
           </div>
 
@@ -242,4 +196,4 @@ function MdetailsAr() {
   );
 };
 
-export default MdetailsAr;
+export default RectifierArc;

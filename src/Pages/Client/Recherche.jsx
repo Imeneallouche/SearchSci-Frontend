@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect } from 'react';
 import './recherche.css'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
@@ -7,6 +8,22 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 
 function Recherche() {
+  useEffect(()=> {
+    const url= "http://127.0.0.1:8000/api/search/?search=optimisation"
+  console.log('testing');
+  fetch(url)
+  .then()
+  .then()
+
+
+
+
+
+  });
+  
+
+
+
 return(
 
   

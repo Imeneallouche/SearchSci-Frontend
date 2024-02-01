@@ -1,28 +1,27 @@
 /* styles.css */
 
 /* Styles pour le corps de la page */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
+
   /* Style pour la classe min-h-screen */
-  .min-h-screen {
-    min-height: 100vh;
-  }
+  /* Styles pour le conteneur principal de la page */
+.min-h-screen {
+  min-height: 100vh;
+ 
+}
+
+/* Reste de votre code CSS */
+
   
   /* Style pour le titre h1 */
   .text-4xl {
-    font-size: 2rem; /* Taille du texte */
-    line-height: 2.5rem; /* Hauteur de ligne */
-    font-weight: semi-bold; /* Gras */
+    font-size: 3rem;
+    line-height: 2.5rem;
+    font-weight: semi-bold;
     position: absolute;
-    top: 20px; /* Position en haut */
-    left: 50%; /* Aligné au centre horizontalement */
-    transform: translateX(-50%); /* Centrage horizontal */
-  
+    top: 20px;
+    text-align: center; /* Aligner au centre horizontalement */
   }
+  
   
   /* Style pour le lien VIEW PDF */
   .text-blue-500 {
@@ -39,8 +38,10 @@ body {
   .text-black {
     color: #1E1E1E; /* Couleur du texte */
     line-height: 1.5; /* Hauteur de ligne */
-    height: 90px; 
-    margin-bottom: 30px;
+    height: 100px; 
+    margin-bottom: 90px;
+    position: absolute;
+   
   }
   
   /* Style pour l'icône favori */
@@ -96,4 +97,29 @@ body {
   .gray-bg {
     background-color: #ccc; /* Gris */
   }
+
+
+
+  .input-large {
+    width: 100%; /* ou toute autre taille souhaitée */
+  }
+
+
+
+
+
+  .text-center {
+    text-align: left;
+  }
+  
+ /* Ajoutez ces styles dans votre fichier MdetailsAr.css */
+
+.author-info p::before {
+  content: '\2022'; /* Utilisation du caractère Unicode pour un point noir */
+  color: #000; /* Couleur noire */
+  margin-right: 8px; /* Marge à droite pour séparer la boule du texte */
+}
+ 
+  
+  
   

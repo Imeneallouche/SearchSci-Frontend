@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { useEffect } from 'react';
 import bgtp1 from "../../assets/bgtp1.jpg";
 import traits from "../../assets/traits.svg";
 import Article from "../../Components/Article";
@@ -8,7 +9,24 @@ function ListeArticles() {
     backgroundImage: `url(${bgtp1})`,
   };
 
+  const [listeArticles, setListeArticles] = useState([]);
+
+  useEffect(() => {
+    const url = "http://127.0.0.1:8000/api/search/?traiter=false";
+    console.log('testing');
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setListeArticles(data.results);
+      });
+  }, []); // Empty dependency array to run the effect only once on mount
+
+
   return (
+
+
+  
     <div
       className='font-["Inter"] text-[#1E1E1E] object-cover w-full h-full'
       style={backgroundImageStyle}
@@ -33,15 +51,13 @@ function ListeArticles() {
         <p>Details</p>
       </div>
 
-      <Article titre="Artificial intelligence in a modern approach" />
-      <Article titre="Artificial intelligence in a modern approach" />
-      <Article titre="Artificial intelligence in a modern approach" />
-      <Article titre="Artificial intelligence in a modern approach" />
-      <Article titre="Artificial intelligence in a modern approach" />
-      <Article titre="Artificial intelligence in a modern approach" />
-      <Article titre="Artificial intelligence in a modern approach" />
-      <Article titre="Artificial intelligence in a modern approach" />
-      <Article titre="Artificial intelligence in a modern approach" />
+      {ListeArticles
+      
+        ?listeArticles.map((listeArticle ) => {
+        return<Article titre= {listeArticle.titre} />;
+}): null
+         }
+     
     </div>
   );
 }
