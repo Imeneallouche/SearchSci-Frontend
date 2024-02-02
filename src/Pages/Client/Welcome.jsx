@@ -1,79 +1,61 @@
 import React, { useState } from "react";
-import './welcome.css'; 
+import { useNavigate } from "react-router-dom";
+import { routers } from "../../endpoints";
 
+import "./welcome.css";
+import { SingUpData } from "../../Data/Authentication";
+import bgtp1 from "../../assets/bgtp1.jpg";
+
+import logo from "../../assets/logo.png";
 
 function Welcome() {
-  const [isDeleteClicked, setIsDeleteClicked] = useState(false);
-  const [isEditClicked, setIsEditClicked] = useState(false);
+  const history = useNavigate();
 
-  
-  const handleDeleteClick = () => {
-    setIsDeleteClicked(!isDeleteClicked);
+  const handleRedirectionSignIn = () => {
+    history(routers.SIGNIN);
   };
 
-  const handleEditClick = () => {
-    setIsEditClicked(!isEditClicked);
+  const handleRedirectionSignUp = () => {
+    history(routers.SIGNUP);
+  };
+  const backgroundImageStyle = {
+    backgroundImage: `url(${bgtp1})`,
   };
 
+  return (
+    <div
+      style={backgroundImageStyle}
+      className="w-full h-screen flex flex-col bg-dark-blue w-fit rounded-xl justify-center items-center content-center gap-20"
+    >
+      <div className="flex items-center my-5 gap-5">
+        <h1 className="font-bold text-5xl text-black">{SingUpData.TITLE}</h1>
+        <img className="h-10" src={logo} alt="logo" />
+      </div>
+      <div className="w-[40%]">
+        <p className="text-black text-xl text-center">
+          Welcome to science space, a collaborative project that empowers users
+          to delve into the world of scientific literature with ease. Welcome to
+          science space, collaborative project that empowers users to delve into
+          the world of scientific literature with ease.
+        </p>
+      </div>
 
-    return (
+      <div className="flex gap-20">
+        <button
+          className={`w-48 blue-button`}
+          onClick={handleRedirectionSignIn}
+        >
+          Login
+        </button>
+        <button
+          className={`w-48 blue-button`}
+          onClick={handleRedirectionSignUp}
+        >
+          Create Account
+        </button>
+      </div>
+    </div>
+  );
+}
 
-    
-<div className="container">
-<div className="title">
-  <span className="black">WELCOME TO </span>
-  <span className="yellow">S</span>
-  <span className="black">CI</span>
-  <span className="blue">EN</span>
-  <span className="red">S</span>
-  <span className="black">PACE</span>
-</div>
-<div className="main-text">
-  <div className="center-text">
-   <p>
-    Welcome to science space, a collaborative project that empowers users to delve into the world of scientific literature with ease.
-    Welcome to science space, collaborative project that empowers users to delve into the world of scientific literature with ease.
-   </p>
-  </div>
-
-
-
-
-  <div className="buttons">
-            <button
-               className={`blue-button ${isDeleteClicked ? "gray-bg" : ""}`}
-              onClick={handleDeleteClick}
-            >
-             Login
-            </button>
-            <button
-              className={`blue-button ${isEditClicked ? "gray-bg" : ""}`}
-              onClick={handleEditClick}
-            >
-              Create Account
-            </button>
-          </div>
-
-
-
-
-
-
-
-
-</div>
-</div>
-
-
-
-
-
-
-
-    
-    );
-  }
-
-  
-  export default Welcome;
-  
+export default Welcome;

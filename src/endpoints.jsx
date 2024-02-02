@@ -1,6 +1,6 @@
 export const endpoints = {
-  SIGNIN: "/user/SignIn",
-  SIGNUP: "/user/SignUp",
+  SIGNIN: "/api/login/",
+  SIGNUP: "/api/register_utilisateur/",
 };
 
 export const routers = {
@@ -15,4 +15,4 @@ export const routers = {
   LISTE_ARTICLES: "/ListeArticles",
 };
 
-export const BACKEND_URL = "http://localhost:5000";
+export const BACKEND_URL = "http://localhost:8000";

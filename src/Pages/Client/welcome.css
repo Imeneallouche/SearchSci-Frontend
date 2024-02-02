@@ -1,83 +1,19 @@
+.buttons {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
 
+.blue-button {
+  background-color: #50b3c5;
+  color: white;
+  padding: 15px 20px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-
-/* App.css */
-
-.container {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  .title {
-    font-size: 60px;
-    font-weight: bold;
-    position: absolute;
-    top: 25%;
-   left: 25%;
-  }
-  
-  .black {
-    color: #1E1E1E;
-  }
-  
-  .yellow {
-    color: #FED356;
-  }
-  
-  .blue {
-    color: #50B3C5;
-  }
-  
-  .red {
-    color: #C93227;
-  }
-  
-  .main-text {
-    margin-top: 30px;
-    position: absolute;
-    top: 35%;
-    left: 30%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .center-text {
-    text-align: center;
-    max-width: 600px; /* Ajustez la largeur maximale selon votre mise en page */
-    margin: 0 auto; /* Centrage horizontal */
-    color: #4C4C4C;
-  }
-  
-  .buttons {
-    margin-top: 100px;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .blue-button {
-    background-color: #50B3C5;
-    color: white;
-    padding: 15px 20px;
-    margin: 0 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 150px; /* Largeur fixe des boutons */
-  }
-
-  .gray-bg {
-    background-color: #ccc; /* Gris */
-  }
-  
-  body {
-    background-image: url('../../assets/bgtp2.jpg'); /* Remplacez 'chemin_vers_votre_image.jpg' par le chemin de votre image */
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-    /* Ajuster la taille de l'image pour couvrir toute la zone */
-    background-position: center; /* Positionner l'image au centre */
-    background-attachment: fixed;
-    /* Autres propriétés CSS pour le body si nécessaire */
-  }
-  
+.gray-bg {
+  background-color: #ccc; /* Gris */
+}
