@@ -12,7 +12,7 @@ import RectifierArc from './Pages/Moderateur/RectifierArc'
 function App() {
   return (
     <div className="">
-      <MdetailsAr />
+      <ListeArticles />
     </div>
   );
 }

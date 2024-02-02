@@ -54,9 +54,9 @@ function ListeArticles() {
       {ListeArticles
       
         ?listeArticles.map((listeArticle ) => {
-        return<Article titre= {listeArticle.titre} />;
-}): null
-         }
+        return<Article titre= {listeArticle.titre}  id={listeArticle.id} />;
+        }): null
+      }
      
     </div>
   );

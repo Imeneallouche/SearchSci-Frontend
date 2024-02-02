@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import { useEffect } from 'react';
 //import {useNavigate} from 'react-router-dom'
 import './MdetailsAr.css' ;
+import { useParams } from 'react-router-dom';
 
 function MdetailsAr() {
  // const navigate =useNavigate();
-  const id =2;
-  
   const [isFavorite, setIsFavorite] = useState(false);
   const [isDeleteClicked, setIsDeleteClicked] = useState(false);
   const [isEditClicked, setIsEditClicked] = useState(false);
@@ -24,28 +23,24 @@ function MdetailsAr() {
   };
 
 
-
+  const { id } = useParams();
   const [mdetailsAr, setMdetailsAr] = useState([]);
   const [references, setReferences] = useState([]);
   const [auteurs, setAuteurs] = useState([]);
 
+
+
+
   useEffect(() => {
-    const url = "http://127.0.0.1:8000/api/articles/2/";
-    console.log('testing');
+    const url = `http://127.0.0.1:8000/api/articles/${id}/`; // Use the article ID in the URL
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        console.log("Data received:",data.Article);
-        console.log("refernces:",data.Article.references);
-        
-
         setMdetailsAr(data.Article);
         setReferences(data.Article.references);
         setAuteurs(data.Article.auteurs);
-        
-       
       });
-  }, []); // Empty dependency array to run the effect only once on mount
+  }, [id]);
 
 
 
