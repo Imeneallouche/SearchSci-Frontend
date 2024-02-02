@@ -1,11 +1,7 @@
 /* styles.css */
 
 /* Styles pour le corps de la page */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
+
 
 /* Style pour la classe min-h-screen */
 .min-h-screen {
@@ -14,14 +10,12 @@ body {
 
 /* Style pour le titre h1 */
 .text-4xl {
-  font-size: 2rem; /* Taille du texte */
-  line-height: 2.5rem; /* Hauteur de ligne */
-  font-weight: semi-bold; /* Gras */
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: semi-bold;
   position: absolute;
-  top: 20px; /* Position en haut */
-  left: 50%; /* Aligné au centre horizontalement */
-  transform: translateX(-50%); /* Centrage horizontal */
-
+  top: 20px;
+  text-align: center; /* Aligner au centre horizontalement */
 }
 
 /* Style pour le lien VIEW PDF */

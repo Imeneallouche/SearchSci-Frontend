@@ -60,7 +60,7 @@ function MdetailsAr() {
   return (
     <div className="min-h-screen relative ">
 
-      <h1 className="text-4xl font-semibold text-black absolute md:top-40 text-center md:right-30">
+      <h1 className="text-4xl font-semibold text-black absolute md:top-40 text-center md:right-30 mt-40">
       {mdetailsAr && mdetailsAr.titre}
       </h1>
       <div className="  relative">
@@ -183,30 +183,13 @@ function MdetailsAr() {
             // return response.json()
            // navigate (' /ListeArticles')
             })
-          
-            
-
-
-
-
              .catch((e)   =>  {
               console.log(e);
              })
-              
-
 
               }}>
 
-
-
-
-
               Supprimer l'article
-
-
-
-
-
             </button>
 
 
