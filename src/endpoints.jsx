@@ -13,6 +13,7 @@ export const routers = {
   GERER_MODERATOR: "/GererModerator",
   UPLOAD_ARTICLE: "/UploadArticle",
   LISTE_ARTICLES: "/ListeArticles",
+  UPDATE_MODERATOR: "/UpdateModerator/:id",
 };
 
 export const BACKEND_URL = "http://localhost:5000";
