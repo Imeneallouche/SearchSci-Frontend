@@ -10,6 +10,8 @@ import FavoriteArticlesPage from "./Pages/Client/favoriteArticlesPage";
 import AddModeratorPage from "./Pages/Admin/addModeratorPage";
 import GererModerateursPage from "./Pages/Admin/GererModerateursPage";
 import UploadArticle from "./Pages/Admin/UploadArticle";
+import Welcome from "./Pages/Client/Welcome";
+import UpdateModeratorPage from "./Pages/Admin/updateModeratorPage"
 
 function App() {
   return (
@@ -54,7 +56,7 @@ function App() {
           />
           <Route
             path={routers.UPDATE_MODERATOR}
-            Component={updateModeratorPage}
+            Component={UpdateModeratorPage}
             exact
           />
         </Routes>
