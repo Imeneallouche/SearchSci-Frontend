@@ -10,14 +10,13 @@ import FavoriteArticlesPage from "./Pages/Client/favoriteArticlesPage";
 import AddModeratorPage from "./Pages/Admin/addModeratorPage";
 import GererModerateursPage from "./Pages/Admin/GererModerateursPage";
 import UploadArticle from "./Pages/Admin/UploadArticle";
-import updateModeratorPage from "./Pages/Admin/updateModeratorPage";
 
 function App() {
   return (
     <div className="w-screen">
       <Router>
         <Routes>
-          <Route path={routers.HOME} Component={ListeArticles} exact />
+          <Route path={routers.HOME} Component={Welcome} exact />
           <Route path={routers.SIGNIN} Component={SignInPage} exact />
           <Route path={routers.SIGNUP} Component={SignUpPage} exact />
           <Route
