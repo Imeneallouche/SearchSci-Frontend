@@ -106,6 +106,7 @@ export default function SignInPage() {
       DATA OF THE USER IN LOCAL STORAGE*/
       localStorage.setItem("userInfo", JSON.stringify(response));
       setLoading(false);
+      history.push(routers.CHAT);
     } catch (err) {
       toast({
         title: "Error Occured!",
@@ -154,8 +155,7 @@ export default function SignInPage() {
         <img className="h-4" src={logo} alt="logo" />
       </div>
       <div className="flex justify-center items-center gap-5 pt-12">
-        <h1 className="text-center font-bold text-5xl">BIENVENUE A</h1>
-        <img className="h-9" src={logo} alt="logo" />
+        <img className="h-10" src={logo} alt="logo" />
       </div>
 
       <form

@@ -5,11 +5,6 @@ import { routers } from "./endpoints";
 import RectifierArc from "./Pages/Moderateur/RectifierArc";
 import ListeArticles from "./Pages/Moderateur/ListeArticles";
 import MdetailsAr from "./Pages/Moderateur/MdetailsAr";
-import SignInPage from "./Pages/Client/SignInPage";
-import SignUpPage from "./Pages/Client/SignUpPage";
-import FilterArticlesPage from "./Pages/Client/filterArticlesPage";
-import FavoriteArticlesPage from "./Pages/Client/favoriteArticlesPage";
-import AddModeratorPage from "./Pages/Admin/addModeratorPage";
 import GererModerateursPage from "./Pages/Admin/GererModerateursPage";
 import Welcome from "./Pages/Client/Welcome";
 import UpdateModeratorPage from "./Pages/Admin/updateModeratorPage"
@@ -17,19 +12,19 @@ import Recherche from "./Pages/Client/Recherche"
 import UploadArticle from "./Pages/Admin/UploadArticle"
 import UploadArticlePopUp from './Components/UploadArticlePopUp';
 
+import SignInPage from "./Pages/Client/SignInPage";
+import SignUpPage from "./Pages/Client/SignUpPage";
+import FilterArticlesPage from "./Pages/Client/filterArticlesPage";
+import FavoriteArticlesPage from "./Pages/Client/favoriteArticlesPage";
+import AddModeratorPage from "./Pages/Admin/addModeratorPage";
+
 function App() {
-
-
-  // return (
-  //   <div className="">
-  //     <ListeArticles />
-  //   </div>
-  // );
 
   return (
     <div className="w-screen">
       <Router>
         <Routes>
+          <Route path={routers.HOME} Component={ListeArticles} exact />
           <Route
             path={routers.LISTE_ARTICLES}
             Component={ListeArticles}
@@ -81,7 +76,7 @@ function App() {
 
           <Route
             path={routers.SEARCH}
-            element={<Recherche />}
+            Component={Recherche}
             exact
           />
 

@@ -1,4 +1,6 @@
 export const endpoints = {
+  SIGNIN: "/user/SignIn",
+  SIGNUP: "/user/SignUp",
   SIGNIN: "/api/login/",
   SIGNUP: "/api/register_utilisateur/",
 };
@@ -18,7 +20,7 @@ export const routers = {
   UPLOADPOPUP: "/UploadArticlePopUp",
   SEARCH: "/Recherche",
   UPDATE_MODERATOR: "/UpdateModerator/:id",
-  RECHERCHE: "/Recherche"
 };
+
 
 export const BACKEND_URL = "http://localhost:8000";

@@ -50,8 +50,7 @@ export default function AddModeratorPage() {
         <img className="h-4" src={logo} alt="logo" />
       </div>
       <div className="flex justify-center items-center gap-5 pt-12">
-        <h1 className="text-center font-bold text-5xl">BIENVENUE A</h1>
-        <img className="h-9" src={logo} alt="logo" />
+        <img className="h-10" src={logo} alt="logo" />
       </div>
       <form onSubmit={handleSubmit}
         className="w-full flex flex-col gap-10 py-10 px-80 justify-center items-center"
