@@ -17,6 +17,7 @@ export const routers = {
   RECTIFY: "/RectifierArc",
   UPLOADPOPUP: "/UploadArticlePopUp",
   SEARCH: "/Recherche",
+  UPDATE_MODERATOR: "/UpdateModerator/:id",
 };
 
 export const BACKEND_URL = "http://localhost:8000";

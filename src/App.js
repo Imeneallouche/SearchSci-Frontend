@@ -13,6 +13,7 @@ import AddModeratorPage from "./Pages/Admin/addModeratorPage";
 import GererModerateursPage from "./Pages/Admin/GererModerateursPage";
 import UploadArticle from "./Pages/Admin/UploadArticle";
 import Welcome from "./Pages/Client/Welcome";
+import UpdateModeratorPage from "./Pages/Admin/updateModeratorPage"
 import Recherche from "./Pages/Client/Recherche";
 import UploadArticlePopUp from './Components/UploadArticlePopUp';
 
@@ -103,6 +104,11 @@ function App() {
           />
 
           
+          <Route
+            path={routers.UPDATE_MODERATOR}
+            Component={UpdateModeratorPage}
+            exact
+          />
         </Routes>
       </Router>
     </div>
