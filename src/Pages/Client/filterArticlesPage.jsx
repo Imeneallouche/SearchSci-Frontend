@@ -7,6 +7,8 @@ import { rawArticlesData } from "../../Data/rawArticles";
 import { FilterArticlesData } from "../../Data/ArticleShowCase";
 
 import DetailedArticle from "../../Components/detailedArticle";
+import { useParams } from 'react-router-dom';
+import { useEffect } from 'react';
 
 function FilterArticlesPage() {
   const [input, setInput] = useState("");
@@ -14,6 +16,23 @@ function FilterArticlesPage() {
   const backgroundImageStyle = {
     backgroundImage: `url(${bgtp1})`,
   };
+
+  const { mot } = useParams();
+
+  const [listeArticles, setListeArticles] = useState([]);
+
+  useEffect(()=> {
+    const url= `http://127.0.0.1:8000/api/search/?search=${mot}/`;
+    console.log('testing');
+    fetch(url)
+    .then((response) => response.json())
+      .then((data) => {
+        setListeArticles(data.results);
+        console.log('data.results',data.results);
+      });
+  }, [mot]);
+
+
 
   return (
     <div
@@ -54,13 +73,12 @@ function FilterArticlesPage() {
       </h1>
 
       <div className="flex flex-col mx-10 gap-5">
-        {rawArticlesData.map((article, index) => (
+        {...listeArticles.map((article, index) => (
           <DetailedArticle
-            stared={article.FAVORITE}
-            title={article.TITLE}
-            pdf_link={article.PDF_LINK}
-            reference={article.REFERENCE}
-            resume={article.RESUME}
+            title={article.titre}
+            pdf_link={article.urlPdf}
+            reference={article.references.titre}
+            resume={article.resume}
           />
         ))}
       </div>

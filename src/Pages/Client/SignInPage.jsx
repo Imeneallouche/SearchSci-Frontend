@@ -106,7 +106,10 @@ export default function SignInPage() {
       DATA OF THE USER IN LOCAL STORAGE*/
       localStorage.setItem("userInfo", JSON.stringify(response));
       setLoading(false);
+<<<<<<< HEAD
       history.push(routers.CHAT);
+=======
+>>>>>>> 477ed133d852385c09b5c5517082e7e774a5d5ac
     } catch (err) {
       toast({
         title: "Error Occured!",

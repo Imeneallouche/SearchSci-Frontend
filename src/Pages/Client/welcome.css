@@ -1,0 +1,19 @@
+.buttons {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.blue-button {
+  background-color: #50b3c5;
+  color: white;
+  padding: 15px 20px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.gray-bg {
+  background-color: #ccc; /* Gris */
+}
