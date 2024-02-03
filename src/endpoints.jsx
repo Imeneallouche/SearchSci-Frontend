@@ -13,6 +13,10 @@ export const routers = {
   GERER_MODERATOR: "/GererModerator",
   UPLOAD_ARTICLE: "/UploadArticle",
   LISTE_ARTICLES: "/ListeArticles",
+  MDETAILS: "/MdetailsAr",
+  RECTIFY: "/RectifierArc",
+  UPLOADPOPUP: "/UploadArticlePopUp",
+  SEARCH: "/Recherche",
 };
 
 export const BACKEND_URL = "http://localhost:8000";

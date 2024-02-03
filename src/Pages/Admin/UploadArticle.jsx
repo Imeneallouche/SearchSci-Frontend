@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import bgtp1 from "../../assets/bgtp1.jpg";
 import traits from "../../assets/traits.svg";
 import logo from "../../assets/logo.png";
-import upload from "../../assets/upload.svg"
+import upload from "../../assets/upload.svg";
+import { Link } from 'react-router-dom';
+import { routers } from "../../endpoints";
 
 
 function UploadArticle() {
@@ -32,10 +34,10 @@ function UploadArticle() {
                     URL contenant un ensemble d’articles en format PDF, ces articles peuvent être en une colonne ou deux colonnes maximum.
                 </p>
                 <div className="w-full flex items-center justify-center">
-                    <button className="flex items-center justify-content gap-4 bg-[#50B3C5] hover:bg-[#1E1E1E] text-[#FEFEFE] font-medium py-4 px-6 rounded-[0.15em]" >
+                <Link to={routers.UPLOADPOPUP}><button className="flex items-center justify-content gap-4 bg-[#50B3C5] hover:bg-[#1E1E1E] text-[#FEFEFE] font-medium py-4 px-6 rounded-[0.15em]" >
                         Opération Upload
                         <img src={upload} alt="" className="text-white" />
-                    </button>
+                    </button></Link>
                 </div>
             </div>
         </div>
