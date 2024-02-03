@@ -13,6 +13,10 @@ export const routers = {
   GERER_MODERATOR: "/GererModerator",
   UPLOAD_ARTICLE: "/UploadArticle",
   LISTE_ARTICLES: "/ListeArticles",
+  MDETAILS: "/MdetailsAr",
+  RECTIFY: "/RectifierArc",
+  UPLOADPOPUP: "/UploadArticlePopUp",
+  SEARCH: "/Recherche",
   UPDATE_MODERATOR: "/UpdateModerator/:id",
   RECHERCHE: "/Recherche"
 };

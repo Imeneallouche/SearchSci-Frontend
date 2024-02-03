@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from 'react-router-dom';
+import { routers } from "../endpoints";
 
 function UploadArticlePopUp() {
     return (
@@ -14,9 +16,12 @@ function UploadArticlePopUp() {
                     required
                 />
                 <div className="flex items-center justify-center space-x-4 text-[#FEFEFE] font-regular w-full my-4">
+                   <Link to={routers.UPLOAD_ARTICLE}>
                     <button className="flex items-center justify-center bg-[#6C757D] rounded-[0.15em] px-4 w-auto">
                         Annuler
                     </button>
+                    </Link>
+
                     <button className="flex items-center justify-center bg-[#50B3C5] rounded-[0.15em] px-4 w-auto">
                         Lancer Upload
                     </button>

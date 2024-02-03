@@ -1,15 +1,20 @@
 import React from 'react';
-import { useState } from 'react';
 import './recherche.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
+import { Link } from 'react-router-dom';
+import { routers } from "../../endpoints";
+
+
 
 
 function Recherche() {
-
   return (
+
+
     <div className="flex justify-center items-center ">
+
       <div className="text-center">
         <h1 className="text-64 font-semibold">
           <span className="text-yellow-500">S</span>
@@ -45,9 +50,8 @@ function Recherche() {
       <div className="search-container">
         <input
           type="text"
-          className="search-bar text-black"
+          className="search-bar"
           placeholder="Recherche un article"
-
         />
         <span className="search-icon">
           {/* Icône de recherche (Remplacez le contenu avec votre propre icône) */}
