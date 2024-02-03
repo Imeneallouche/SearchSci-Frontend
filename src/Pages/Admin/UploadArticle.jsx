@@ -3,10 +3,12 @@ import bgtp1 from "../../assets/bgtp1.jpg";
 import traits from "../../assets/traits.svg";
 import logo from "../../assets/logo.png";
 import upload from "../../assets/upload.svg"
+import SideBarAdmin from "../../Components/SideBarAdmin";
 
 
 function UploadArticle() {
 
+    const [sideBar, setSideBar] = useState(true);
     const backgroundImageStyle = {
         backgroundImage: `url(${bgtp1})`,
     };
@@ -14,8 +16,11 @@ function UploadArticle() {
     return (
         <div
             className='flex flex-col font-["Inter"] text-[#1E1E1E] object-cover w-full h-full'
-            style={backgroundImageStyle}
         >
+            <SideBarAdmin
+                trigger={sideBar}
+                setTrigger={setSideBar}></SideBarAdmin>
+
             <div className="flex justify-between items-center mt-6 mb-12 mx-10">
                 <button>
                     <img className="w-6" src={traits} alt="" />
@@ -24,10 +29,15 @@ function UploadArticle() {
             </div>
 
             <div className="mt-16">
-                <h1 className="text-bold font-bold text-4xl mx-28 my-12">
+                <h1 className={`
+                ${sideBar ? 'mx-60' : 'mx-28'}
+                text-bold font-bold text-4xl mx-28 my-12`}
+                >
                     Upload Articles
                 </h1>
-                <p className="leading-10 mx-28 mb-12">
+                <p className={`
+                ${sideBar ? 'mx-60' : 'mx-28'}
+                leading-10 mx-28 mb-12`}>
                     A travers cette page, l’administrateur peut lancer une opération d’Upload des articles scientifiques à partir d’une adresse
                     URL contenant un ensemble d’articles en format PDF, ces articles peuvent être en une colonne ou deux colonnes maximum.
                 </p>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import bgtp1 from "../../assets/bgtp1.jpg";
 import previous from "../../assets/previous.png";
@@ -16,7 +16,6 @@ export default function AddModeratorPage() {
     email: "",
     password: "",
   });
-
 
 
   const handleSubmit = async (e) => {

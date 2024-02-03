@@ -14,6 +14,7 @@ export const routers = {
   UPLOAD_ARTICLE: "/UploadArticle",
   LISTE_ARTICLES: "/ListeArticles",
   UPDATE_MODERATOR: "/UpdateModerator/:id",
+  RECHERCHE: "/Recherche"
 };
 
 export const BACKEND_URL = "http://localhost:8000";

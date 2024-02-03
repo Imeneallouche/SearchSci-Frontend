@@ -5,6 +5,8 @@ import traits from "../../assets/traits.svg";
 import Moderateur from "../../Components/Moderateur";
 import DeleteModerateurPopUp from "../../Components/DeleteModerateurPopUp";
 import { useNavigate } from "react-router-dom";
+import SideBarAdmin from "../../Components/SideBarAdmin";
+
 
 
 
@@ -13,6 +15,8 @@ function GererModerateursPage() {
 
   const [selectedUserEmail, setSelectedUserEmail] = useState();
   const [btnPopup, setBtnPopup] = useState(false);
+  const [sideBar, setSideBar] = useState(true);
+
 
 
   const [data, setData] = useState([])
@@ -49,10 +53,14 @@ function GererModerateursPage() {
 
   return (
     <div
-      className='flex flex-col font-["Inter"] text-[#1E1E1E] object-cover w-full h-full overflow-x-hidden'
-      style={backgroundImageStyle}
+      className={`
+      flex flex-col font-["Inter"] text-[#1E1E1E] object-cover w-full h-full overflow-x-hidden`}
     >
-      <div className="flex justify-between items-center mt-6 mb-12 mx-10">
+      <SideBarAdmin
+        trigger={sideBar}
+        setTrigger={setSideBar}></SideBarAdmin>
+      <div className={`
+      flex justify-between items-center mt-6 mb-12 mx-12`}>
         <button>
           <img className="w-6" src={traits} alt="" />
         </button>
@@ -63,20 +71,28 @@ function GererModerateursPage() {
         </p>
       </div>
       <div>
-        <h1 className="font-bold text-4xl ml-36 mb-12 text-[#1E1E1E]">
+        <h1 className=
+          {`
+        ${sideBar ? 'mx-60' : 'mx-36'}
+        font-bold text-4xl mb-12 text-[#1E1E1E]`}>
           Gérer vos modérateurs
         </h1>
-        <button onClick={() => navigate(`/AddModerator`)} className="bg-[#50B3C5] hover:bg-[#1E1E1E] text-[#FEFEFE] font-medium py-2 px-4 rounded-[0.15em] float-right mr-36 mb-12">
+        <button onClick={() => navigate(`/AddModerator`)} className={`
+        ${sideBar ? 'mr-60' : 'mr-36'}
+        bg-[#50B3C5] hover:bg-[#1E1E1E] text-[#FEFEFE] font-medium py-2 px-4 rounded-[0.15em] float-right mr-36 mb-12`}>
           Ajouter modérateur +
         </button>
       </div>
-      <div className="clear-both flex justify-between items-center mx-36 font-semibold bg-white p-4 rounded-[0.2em] box-shadow-light border-y border-[#E4E2E2] mb-4 drop-shadow-md">
+      <div className={`
+      ${sideBar ? 'mx-60' : 'mx-36'}
+      clear-both flex justify-between items-center font-semibold bg-white p-4 rounded-[0.2em] box-shadow-light border-y border-[#E4E2E2] mb-4 drop-shadow-md`}>
         <p>Nom</p>
         <p>Prénom</p>
         <p>Compte Email</p>
         <p>Action</p>
       </div>
-      <div>
+      <div className={`${sideBar ? 'mx-24' : ''}
+      `}>
         {
           data.map((user, index) => {
             return ( //posts ==> data && post ==> user
@@ -88,6 +104,7 @@ function GererModerateursPage() {
                   setSelectedUserEmail(user.email);
                   setBtnPopup(true);
                 }}
+                className={`${sideBar ? 'mx-60' : 'mx-36'}`}
               ></Moderateur>
             )
           })

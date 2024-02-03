@@ -9,9 +9,10 @@ import FilterArticlesPage from "./Pages/Client/filterArticlesPage";
 import FavoriteArticlesPage from "./Pages/Client/favoriteArticlesPage";
 import AddModeratorPage from "./Pages/Admin/addModeratorPage";
 import GererModerateursPage from "./Pages/Admin/GererModerateursPage";
-import UploadArticle from "./Pages/Admin/UploadArticle";
 import Welcome from "./Pages/Client/Welcome";
 import UpdateModeratorPage from "./Pages/Admin/updateModeratorPage"
+import Recherche from "./Pages/Client/Recherche"
+import UploadArticle from "./Pages/Admin/UploadArticle"
 
 function App() {
   return (
@@ -50,13 +51,18 @@ function App() {
             exact
           />
           <Route
-            path={routers.LISTE_ARTICLES}
-            Component={ListeArticles}
+            path={routers.UPDATE_MODERATOR}
+            Component={UpdateModeratorPage}
             exact
           />
           <Route
             path={routers.UPDATE_MODERATOR}
             Component={UpdateModeratorPage}
+            exact
+          />
+          <Route
+            path={routers.RECHERCHE}
+            Component={Recherche}
             exact
           />
         </Routes>
