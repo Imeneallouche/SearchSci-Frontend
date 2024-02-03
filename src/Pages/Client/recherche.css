@@ -12,9 +12,10 @@
 
 
 .container {
-    text-align: center;
-    margin-top: 20px;
-  }
+  text-align: center;
+  margin-top: 20px;
+}
+
 /* Styles pour la barre de recherche */
 .search-container {
   display: flex;
@@ -25,47 +26,55 @@
 }
 
 .search-bar-container {
-  position:absolute;
- 
- 
+  position: absolute;
+
+
 }
 
 .search-bar {
- 
+
   width: 800px;
-  height: 50px; /* Hauteur de la barre de recherche */
-  padding-left: 30px; /* Espace à gauche pour l'icône */
+  height: 50px;
+  /* Hauteur de la barre de recherche */
+  padding-left: 30px;
+  /* Espace à gauche pour l'icône */
   border: 1px solid #ccc;
   border-radius: 5px;
-  font-size: 1rem; /* Taille du texte */
+  font-size: 1rem;
+  /* Taille du texte */
   outline: none;
 }
 
 
 
 .search-icon {
-    position: absolute;
-    top: 50%;
-    left: 1100px;
-    transform: translateY(-50%);
-    color: #666; /* Couleur de l'icône */
-  }
+  position: absolute;
+  top: 50%;
+  left: 1100px;
+  transform: translateY(-50%);
+  color: #666;
+  /* Couleur de l'icône */
+}
 
 
 .text-yellow-500 {
-  color: #FED356; /* Jaune */
+  color: #FED356;
+  /* Jaune */
 }
 
 .text-black {
-  color: #1E1E1E; /* Noir */
+  color: #1E1E1E;
+  /* Noir */
 }
 
 .text-blue-500 {
-  color: #50B3C5; /* Bleu */
+  color: #50B3C5;
+  /* Bleu */
 }
 
 .text-red-500 {
-  color: #C93227; /* Rouge */
+  color: #C93227;
+  /* Rouge */
 }
 
 .text-center {
@@ -82,12 +91,16 @@
 }
 
 .text-lg {
- 
-  font-size: 1.25rem; /* Taille de police */
-  color: #4C4C4C; /* Couleur du texte */
-  margin-bottom: 20px; /* Marge en bas pour l'espacement */
+
+  font-size: 1.25rem;
+  /* Taille de police */
+  color: #4C4C4C;
+  /* Couleur du texte */
+  margin-bottom: 20px;
+  /* Marge en bas pour l'espacement */
   margin-top: 150%;
 }
+
 
 .text-center2 {
   position: absolute;
@@ -103,11 +116,12 @@
 }
 
 body {
-  background-image: url('../../assets/bgtp3.jpg'); /* Remplacez 'chemin_vers_votre_image.jpg' par le chemin de votre image */
-  background-size: 100% auto;
-  background-repeat: no-repeat;
+  /* background-image: url('../../assets/bgtp3.jpg'); Remplacez 'chemin_vers_votre_image.jpg' par le chemin de votre image */
+  /* background-size: 100% auto;
+  background-repeat: no-repeat; */
   /* Ajuster la taille de l'image pour couvrir toute la zone */
-  background-position: center; /* Positionner l'image au centre */
+  /* background-position: center; */
+  /* Positionner l'image au centre */
 
   /* Autres propriétés CSS pour le body si nécessaire */
 }

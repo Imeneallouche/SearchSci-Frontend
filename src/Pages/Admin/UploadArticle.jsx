@@ -6,17 +6,21 @@ import upload from "../../assets/upload.svg"
 import SideBarAdmin from "../../Components/SideBarAdmin";
 import { Link } from 'react-router-dom';
 import { routers } from "../../endpoints";
+import UploadArticlePopUp from "../../Components/UploadArticlePopUp";
 
 
 function UploadArticle() {
 
     const [sideBar, setSideBar] = useState(true);
+    const [btnPopup, setBtnPopup] = useState(false);
+
     const backgroundImageStyle = {
         backgroundImage: `url(${bgtp1})`,
     };
 
     return (
         <div
+            style={backgroundImageStyle}
             className='flex flex-col font-["Inter"] text-[#1E1E1E] object-cover w-full h-full'
         >
             <SideBarAdmin
@@ -30,10 +34,10 @@ function UploadArticle() {
                 <img className="h-5" src={logo} alt="logo" />
             </div>
 
-            <div className="mt-16">
+            <div className="mt-60">
                 <h1 className={`
                 ${sideBar ? 'mx-60' : 'mx-28'}
-                text-bold font-bold text-4xl mx-28 my-12`}
+                text-bold font-bold text-4xl mx-28 mt-60`}
                 >
                     Upload Articles
                 </h1>
@@ -44,12 +48,17 @@ function UploadArticle() {
                     URL contenant un ensemble d’articles en format PDF, ces articles peuvent être en une colonne ou deux colonnes maximum.
                 </p>
                 <div className="w-full flex items-center justify-center">
-                    <Link to={routers.UPLOADPOPUP}><button className="flex items-center justify-content gap-4 bg-[#50B3C5] hover:bg-[#1E1E1E] text-[#FEFEFE] font-medium py-4 px-6 rounded-[0.15em]" >
+                    <button onClick={() => {
+                        setBtnPopup(true);
+                    }} className="flex items-center justify-content gap-4 bg-[#50B3C5] hover:bg-[#1E1E1E] text-[#FEFEFE] font-medium py-4 px-6 rounded-[0.15em]" >
                         Opération Upload
-                        <img src={upload} alt="" className="text-white" />
-                    </button></Link>
+                    </button>
                 </div>
             </div>
+            <UploadArticlePopUp
+                trigger={btnPopup}
+                setTrigger={setBtnPopup}>
+            </UploadArticlePopUp>
         </div>
     );
 }

@@ -44,7 +44,7 @@ export default function AddModeratorPage() {
   return (
     <div
       style={backgroundImageStyle}
-      className="text-[#1E1E1E] w-full h-screen flex flex-col bg-dark-blue w-fit rounded-xl justify-between items-center content-center"
+      className="text-[#1E1E1E] w-full h-screen"
     >
       <div className="py-12 px-20 flex w-full justify-between">
         <Link to='/GererModerator'>
@@ -54,14 +54,10 @@ export default function AddModeratorPage() {
       </div>
       <div className="w-full flex-1 flex flex-col justify-center items-center">
         <div className="flex items-center my-5 gap-5">
-          <h1 className="font-bold text-4xl text-black">
-            Ajouter votre modérateur à ScienSpace
-          </h1>
+          <h1 className="font-semibold text-5xl">Ajouter un modérateur</h1>
         </div>
 
-        <p className="font-semi-bold text-black">Créez un compte pour plonger dans le monde de la littérature scientifique
 
-        </p>
 
         <form onSubmit={handleSubmit}
           className="w-full flex flex-col gap-10 py-10 px-80 justify-center items-center"

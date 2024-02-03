@@ -53,7 +53,7 @@ function UpdateModeratorPage() {
     return (
         <div
             style={backgroundImageStyle}
-            className="text-[#1E1E1E] w-full h-screen flex flex-col bg-dark-blue w-fit rounded-xl justify-between items-center content-center"
+            className="text-[#1E1E1E]"
         >
             <div className="py-12 px-20 flex w-full justify-between">
                 <Link to='/GererModerator'>
@@ -62,13 +62,10 @@ function UpdateModeratorPage() {
                 <img className="h-4" src={logo} alt="logo" />
             </div>
             <div className="w-full flex-1 flex flex-col justify-center items-center">
-                <div className="flex items-center my-5 gap-5">
-                    <h1 className="font-semibold text-4xl text-black">
-                        Modifier votre Modérateur
-                    </h1>
+                <div className="">
+                    <h1 className="text-5xl font-semibold">Modifier mon modérateur</h1>
                 </div>
 
-                <p className="font-semi-bold text-black">Modifier votre modérateur a travers cette page</p>
 
                 <form onSubmit={handleSubmit}
                     className="w-full flex flex-col gap-5 py-10 px-80 justify-center items-center"

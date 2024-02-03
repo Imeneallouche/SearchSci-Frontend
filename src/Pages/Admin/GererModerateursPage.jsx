@@ -74,7 +74,7 @@ function GererModerateursPage() {
         <h1 className=
           {`
         ${sideBar ? 'mx-60' : 'mx-36'}
-        font-bold text-4xl mb-12 text-[#1E1E1E]`}>
+        font-bold text-4xl mb-12 text-[#1E1E1E] pt-12`}>
           Gérer vos modérateurs
         </h1>
         <button onClick={() => navigate(`/AddModerator`)} className={`
