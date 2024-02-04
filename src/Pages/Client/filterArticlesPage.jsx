@@ -36,41 +36,28 @@ function FilterArticlesPage() {
 
   return (
     <div
-      className='flex flex-col font-["Inter"] text-[#1E1E1E] object-cover w-full h-full'
+      className='font-["Inter"] text-[#1E1E1E]'
       style={backgroundImageStyle}
     >
-      <div className="flex justify-between items-center mt-6 mb-12 mx-10">
+      <div className="flex items-center justify-between">
         <button>
-          <img className="w-6" src={traits} alt="" />
+          <img className="w-6 my-12 ml-12" src={traits} alt="" />
         </button>
-        <input
-          type="text"
-          placeholder={FilterArticlesData.SEARCH_INPUT}
-          className="border-2 border-green my-4 p-4 w-[50%] text-green bg-dark-blue"
-          value={input}
-          onChange={(event) => setInput(event.target.value)}
-        />
-        <img className="h-5" src={logo} alt="logo" />
+        <img className="h-5 mr-12" src={logo} alt="logo" />
       </div>
-
-      <div className="gap-24 flex justify-between mx-10">
-        {FilterArticlesData.FILTERS.map((filter, index) => (
-          <input
-            key={index}
-            type="text"
-            placeholder={filter}
-            className="flex-1 border-2 border-green my-4 p-4 w-[50%] text-green bg-dark-blue"
-            value={input}
-            onChange={(event) => setInput(event.target.value)}
-          />
-        ))}
-
-        <button className="flex-1">{FilterArticlesData.FILTER_BUTTON}</button>
-      </div>
-
-      <h1 className="text-black font-bold text-3xl m-10">
+      <h1 className="mx-16 mt-32 text-4xl font-bold">
         {FilterArticlesData.TITLE}
       </h1>
+      <div className="mt-40 mx-12 flex flex-col">
+        <p className="ml-4 text-xl font-medium">Filtrer vos résultats:</p>
+        <div className="flex">
+          <button className="flex items-center justify-center bg-[#50B3C5] w-full h-8 p-8 rounded-[0.15em] text-white m-4 font-medium">mots clés</button>
+          <button className="flex items-center justify-center bg-[#50B3C5] w-full h-8 p-8 rounded-[0.15em] text-white m-4 font-medium">Auteurs</button>
+          <button className="flex items-center justify-center bg-[#50B3C5] w-full h-8 p-8 rounded-[0.15em] text-white m-4 font-medium">Institutions</button>
+          <button className="flex items-center justify-center bg-[#50B3C5] w-full h-8 p-8 rounded-[0.15em] text-white m-4 font-medium">Date de publication</button>
+        </div>
+      </div>
+
 
       <div className="flex flex-col mx-10 gap-5">
         {listeArticles.map((article, index) => (
