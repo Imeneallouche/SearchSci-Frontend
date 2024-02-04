@@ -144,13 +144,8 @@ export default function SignInPage() {
     backgroundImage: `url(${bgtp1})`,
   };
 
-
-
   return (
-    <div
-      style={backgroundImageStyle}
-      className="text-[#1E1E1E] h-screen"
-    >
+    <div style={backgroundImageStyle} className="text-[#1E1E1E] h-screen">
       <div className="py-12 px-20 flex w-full justify-between overflow-x-hidden">
         <img className="h-4" src={logo} alt="logo" />
       </div>
@@ -189,7 +184,9 @@ export default function SignInPage() {
 
         <div className="flex gap-2">
           <p>{SignInData.QUESTION}</p>
-          <button className="hover:underline" onClick={handleRedirectionSignUp}>{SignInData.LINK}</button>
+          <button className="hover:underline" onClick={handleRedirectionSignUp}>
+            {SignInData.LINK}
+          </button>
         </div>
       </form>
     </div>

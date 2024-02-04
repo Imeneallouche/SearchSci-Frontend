@@ -3,9 +3,8 @@
 // import { useEffect } from 'react';
 // import { useParams } from 'react-router-dom';
 
-
 // function RectifierArc() {
-  
+
 //   const [isFavorite, setIsFavorite] = useState(false);
 //   const [isDeleteClicked, setIsDeleteClicked] = useState(false);
 //   const [isEditClicked, setIsEditClicked] = useState(false);
@@ -22,9 +21,6 @@
 //     setIsEditClicked(!isEditClicked);
 //   };
 
-
-
-
 //   const { id } = useParams();
 //   const [rectifierArc, setRectifierArc] = useState([]);
 //   const [references, setReferences] = useState([]);
@@ -38,24 +34,13 @@
 //       .then((data) => {
 //         console.log("Data received:",data.Article);
 //         console.log("refernces:",data.Article.references);
-        
 
 //         setRectifierArc(data.Article);
 //         setReferences(data.Article.references);
 //         setAuteurs(data.Article.auteurs);
-        
-       
+
 //       });
 //   }, [id]); // Empty dependency array to run the effect only once on mount
-
-
-
-
-
-
-
-
-
 
 //   return (
 //     <div className="min-h-screen relative ">
@@ -102,15 +87,12 @@
 //       </span>
 //       <div className=" min-h-screen flex items-center ml-80 ">
 //         <div className=" font-semibold text-black text-left  ">
-        
-
 
 //           <div className="input-container">
 //             <strong>Titre Article:</strong>
 //             <input className="input-large" type="text" value={rectifierArc && rectifierArc.titre}/>
 //           </div>
 
-         
 //           <div className="input-container">
 //   <strong>Auteurs:</strong>
 //   {auteurs
@@ -120,15 +102,12 @@
 //             className="input-large"
 //             type="text"
 //             value={`${"\u2022"} ${auteur.full_name}, ${auteur.email}, ${auteur.institution.nom}, ${auteur.institution.adress}`}
-            
+
 //           />
 //         </div>
 //       ))
 //     : null}
 // </div>
-
-
-
 
 //          <div className="input-container">
 //             <strong>Mots cle:</strong>
@@ -140,23 +119,13 @@
 //             <input className="input-large" type="text" value={rectifierArc && rectifierArc.resume} />
 //           </div>
 
-
 //           <div className="input-container">
 //             <strong>Texte Integral:</strong>
 //             <input className="input-large" type="text" value={rectifierArc && rectifierArc.texteIntegral} />
 //           </div>
 
-
-         
-
-
-
-
-
 //           <div className="input-container">
 //             <strong>Réference:</strong>
-
-
 
 //              {references
 //     ? references.map((reference, index) => (
@@ -165,14 +134,12 @@
 //             className="input-large"
 //             type="text"
 //             value={`${"\u2022"} ${reference.titre}`}
-            
+
 //           />
 //         </div>
 //       ))
 //     : null}
 //           </div>
-
-        
 
 //           <div className="buttons">
 //             <button
@@ -189,11 +156,6 @@
 //             </button>
 //           </div>
 
-          
-
-
-
-
 //           {/* Ajoutez le reste du texte avec le formatage approprié */}
 //         </div>
 //       </div>
@@ -203,23 +165,15 @@
 
 // export default RectifierArc;
 
-
-
-
-
-
-
-
-
 import React, { useState, useEffect } from "react";
 import "./MdetailsAr.css";
 import { useParams } from "react-router-dom";
-import {useNavigate} from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { routers } from "../../endpoints";
 
 function RectifierArc() {
-  const navigate =useNavigate();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     titre: "",
     motsCles: "",
@@ -255,12 +209,9 @@ function RectifierArc() {
     }
   };
 
-
-
-
   const handleSubmit = (e) => {
     e.preventDefault();
-  
+
     const articleData = {
       Article: {
         id: id,
@@ -280,36 +231,31 @@ function RectifierArc() {
         traiter: false, // Assuming this is a default value
       },
     };
-  
+
     // Send the updated article data to the backend API
-    fetch('http://127.0.0.1:8000/api/Rectifier_Article/', {
-      method: 'PUT',
+    fetch("http://127.0.0.1:8000/api/Rectifier_Article/", {
+      method: "PUT",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(articleData),
     })
       .then((response) => {
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error("Network response was not ok");
         }
         return response.json();
       })
       .then((data) => {
-        console.log('Article updated successfully:', data);
-        navigate('/ListeArticles/');
+        console.log("Article updated successfully:", data);
+        navigate("/ListeArticles/");
         // Handle success or redirect if needed
       })
       .catch((error) => {
-        console.error('Error updating article:', error.message);
+        console.error("Error updating article:", error.message);
         // Handle error
       });
   };
-  
-
-
-
-
 
   return (
     <div className="min-h-screen relative">
@@ -370,37 +316,43 @@ function RectifierArc() {
             <div className="input-container">
               <strong>Auteurs:</strong>
               {formData.auteurs.map((auteur, index) => (
-                
-                <><div key={index}>
-                  <input
-                    className="input-large"
-                    type="text"
-                    name="full_name"
-                    value={auteur.full_name}
-                    onChange={(e) => handleChange(e, index, "auteurs")}
-                    style={{ border: "1px solid gray", padding: "5px" }} />
-                  <input
-                    className="input-large"
-                    type="text"
-                    name="email"
-                    value={auteur.email}
-                    onChange={(e) => handleChange(e, index, "auteurs")}
-                    style={{ border: "1px solid gray", padding: "5px" }} />
-                  <input
-                    className="input-large"
-                    type="text"
-                    name="institution_nom"
-                    value={auteur.institution.nom}
-                    onChange={(e) => handleChange(e, index, "auteurs")}
-                    style={{ border: "1px solid gray", padding: "5px" }} />
-                  <input
-                    className="input-large"
-                    type="text"
-                    name="institution_adress"
-                    value={auteur.institution.adress}
-                    onChange={(e) => handleChange(e, index, "auteurs")}
-                    style={{ border: "1px solid gray", padding: "5px" }} />
-                </div><br></br></>
+                <>
+                  <div key={index}>
+                    <input
+                      className="input-large"
+                      type="text"
+                      name="full_name"
+                      value={auteur.full_name}
+                      onChange={(e) => handleChange(e, index, "auteurs")}
+                      style={{ border: "1px solid gray", padding: "5px" }}
+                    />
+                    <input
+                      className="input-large"
+                      type="text"
+                      name="email"
+                      value={auteur.email}
+                      onChange={(e) => handleChange(e, index, "auteurs")}
+                      style={{ border: "1px solid gray", padding: "5px" }}
+                    />
+                    <input
+                      className="input-large"
+                      type="text"
+                      name="institution_nom"
+                      value={auteur.institution.nom}
+                      onChange={(e) => handleChange(e, index, "auteurs")}
+                      style={{ border: "1px solid gray", padding: "5px" }}
+                    />
+                    <input
+                      className="input-large"
+                      type="text"
+                      name="institution_adress"
+                      value={auteur.institution.adress}
+                      onChange={(e) => handleChange(e, index, "auteurs")}
+                      style={{ border: "1px solid gray", padding: "5px" }}
+                    />
+                  </div>
+                  <br></br>
+                </>
               ))}
             </div>
 
@@ -421,23 +373,17 @@ function RectifierArc() {
             </div>
 
             <div className="buttons">
+              <Link to={`${routers.MDETAILS}/${id}`}>
+                <button className={`red-button`}>Annuler changements</button>
+              </Link>
 
-
-
-
-
-            <Link to={`${routers.MDETAILS}/${id}`}>
-            <button className={`red-button`} >
-                Annuler changements
-              </button>
-               </Link>
-
-
-              <button className={`blue-button`} type="submit"  onClick={handleSubmit} >
+              <button
+                className={`blue-button`}
+                type="submit"
+                onClick={handleSubmit}
+              >
                 Valider changements
               </button>
-
-              
             </div>
           </div>
         </div>

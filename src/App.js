@@ -7,10 +7,10 @@ import ListeArticles from "./Pages/Moderateur/ListeArticles";
 import MdetailsAr from "./Pages/Moderateur/MdetailsAr";
 import GererModerateursPage from "./Pages/Admin/GererModerateursPage";
 import Welcome from "./Pages/Client/Welcome";
-import UpdateModeratorPage from "./Pages/Admin/updateModeratorPage"
-import Recherche from "./Pages/Client/Recherche"
-import UploadArticle from "./Pages/Admin/UploadArticle"
-import UploadArticlePopUp from './Components/UploadArticlePopUp';
+import UpdateModeratorPage from "./Pages/Admin/updateModeratorPage";
+import Recherche from "./Pages/Client/Recherche";
+import UploadArticle from "./Pages/Admin/UploadArticle";
+import UploadArticlePopUp from "./Components/UploadArticlePopUp";
 
 import SignInPage from "./Pages/Client/SignInPage";
 import SignUpPage from "./Pages/Client/SignUpPage";
@@ -19,7 +19,6 @@ import FavoriteArticlesPage from "./Pages/Client/favoriteArticlesPage";
 import AddModeratorPage from "./Pages/Admin/addModeratorPage";
 
 function App() {
-
   return (
     <div className="w-screen">
       <Router>
@@ -39,7 +38,6 @@ function App() {
             Component={AddModeratorPage}
             exact
           />
-
 
           <Route
             path={`${routers.MDETAILS}/:id`}
@@ -66,20 +64,13 @@ function App() {
             exact
           />
 
-
-
           <Route
             path={routers.FAVORITE_ARTICLES}
             Component={FavoriteArticlesPage}
             exact
           />
 
-          <Route
-            path={routers.SEARCH}
-            Component={Recherche}
-            exact
-          />
-
+          <Route path={routers.SEARCH} Component={Recherche} exact />
 
           <Route
             path={`${routers.FILTER_ARTICLES}/:mot`}
@@ -103,24 +94,16 @@ function App() {
             exact
           />
 
-
           <Route
             path={routers.UPDATE_MODERATOR}
             Component={UpdateModeratorPage}
             exact
           />
-          <Route
-            path={routers.RECHERCHE}
-            Component={Recherche}
-            exact
-          />
+          <Route path={routers.RECHERCHE} Component={Recherche} exact />
         </Routes>
       </Router>
     </div>
   );
-
-
-
 }
 
 export default App;

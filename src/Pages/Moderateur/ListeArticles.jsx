@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useEffect } from 'react';
+import { useEffect } from "react";
 import bgtp1 from "../../assets/bgtp1.jpg";
 import traits from "../../assets/traits.svg";
 import Article from "../../Components/Article";
@@ -13,7 +13,7 @@ function ListeArticles() {
 
   useEffect(() => {
     const url = "http://127.0.0.1:8000/api/search/?traiter=false";
-    console.log('testing');
+    console.log("testing");
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
@@ -22,11 +22,7 @@ function ListeArticles() {
       });
   }, []); // Empty dependency array to run the effect only once on mount
 
-
   return (
-
-
-  
     <div
       className='font-["Inter"] text-[#1E1E1E] object-cover w-full h-full'
       style={backgroundImageStyle}
@@ -54,14 +50,16 @@ function ListeArticles() {
       </div>
 
       {ListeArticles
-        
-      
-        ?listeArticles.map((listeArticle ) => {
-         
-          return<Article key={listeArticle.id} titre= {listeArticle.titre}  id={listeArticle.id} />;
-        }): null
-      }
-     
+        ? listeArticles.map((listeArticle) => {
+            return (
+              <Article
+                key={listeArticle.id}
+                titre={listeArticle.titre}
+                id={listeArticle.id}
+              />
+            );
+          })
+        : null}
     </div>
   );
 }

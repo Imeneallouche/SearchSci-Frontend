@@ -7,8 +7,8 @@ import { rawArticlesData } from "../../Data/rawArticles";
 import { FilterArticlesData } from "../../Data/ArticleShowCase";
 
 import DetailedArticle from "../../Components/detailedArticle";
-import { useParams } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
 
 function FilterArticlesPage() {
   const [input, setInput] = useState("");
@@ -23,16 +23,14 @@ function FilterArticlesPage() {
 
   useEffect(() => {
     const url = `http://127.0.0.1:8000/api/search/?search=${mot}/`;
-    console.log('testing');
+    console.log("testing");
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
         setListeArticles(data.results);
-        console.log('data.results', data.results);
+        console.log("data.results", data.results);
       });
   }, [mot]);
-
-
 
   return (
     <div
