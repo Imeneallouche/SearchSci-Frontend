@@ -13,9 +13,6 @@ function DetailedArticle({ stared, title, pdf_link, reference, resume }) {
       <img className="mt-4" src={stared ? favorite : star} alt="favorite" />
       <p className="mt-4"><span className="font-medium">References</span> : {reference}</p>
       <p><span className="font-medium">Resume</span> : {resume}</p>
-
-      {/* <p className="text-black">Resume : {resume}</p> */}
-
     </div>
   );
 }

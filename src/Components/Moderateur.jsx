@@ -1,8 +1,7 @@
 import React from "react";
 import deletebtn from "../assets/delete.svg";
 import editbtn from "../assets/edit.svg";
-import { Navigate, useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Moderateur({ Nom, Prenom, compteEmail, onButtonClick }) {
   const navigate = useNavigate()
@@ -13,7 +12,6 @@ function Moderateur({ Nom, Prenom, compteEmail, onButtonClick }) {
         <p>{Prenom}</p>
         <p>{compteEmail}</p>
         <div className="flex space-x-4">
-
           <button onClick={onButtonClick}>
             <img src={deletebtn} alt="" />
           </button>

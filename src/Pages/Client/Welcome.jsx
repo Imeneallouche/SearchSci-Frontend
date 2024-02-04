@@ -33,8 +33,14 @@ function Welcome() {
         <img className="h-10" src={logo} alt="logo" />
       </div>
       <div className="w-[70%]">
-        <p className="text-center text-xl leading-10">Welcome to science space, a collaborative project that empowers users
-          to delve into the world of scientific literature with ease. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
+        <p className="text-center text-xl leading-10">
+          Welcome to science space, a collaborative project that empowers users
+          to delve into the world of scientific literature with ease. Lorem
+          ipsum dolor sit amet, consectetur adipiscing elit. Sed ut
+          perspiciatis, unde omnis iste natus error sit voluptatem accusantium
+          doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo
+          inventore veritatis et quasi architecto beatae vitae dicta sunt,
+          explicabo.
         </p>
       </div>
       <div className="flex justify-center gap-20">
