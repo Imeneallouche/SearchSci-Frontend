@@ -106,10 +106,7 @@ export default function SignInPage() {
       DATA OF THE USER IN LOCAL STORAGE*/
       localStorage.setItem("userInfo", JSON.stringify(response));
       setLoading(false);
-<<<<<<< HEAD
       history.push(routers.CHAT);
-=======
->>>>>>> 477ed133d852385c09b5c5517082e7e774a5d5ac
     } catch (err) {
       toast({
         title: "Error Occured!",
@@ -147,31 +144,19 @@ export default function SignInPage() {
     backgroundImage: `url(${bgtp1})`,
   };
 
-  /*
 
-
-
-
-
-
-
-
-
-
-
-  */
 
   return (
     <div
       style={backgroundImageStyle}
-      className="w-full h-screen flex flex-col bg-dark-blue w-fit rounded-xl justify-center items-center content-center"
+      className="text-[#1E1E1E] h-screen"
     >
-      <div className="flex items-center my-5 gap-5">
-        <h1 className="font-bold text-5xl text-black">{SignInData.TITLE}</h1>
+      <div className="py-12 px-20 flex w-full justify-between overflow-x-hidden">
+        <img className="h-4" src={logo} alt="logo" />
+      </div>
+      <div className="flex justify-center items-center gap-5 pt-12">
         <img className="h-10" src={logo} alt="logo" />
       </div>
-
-      <p className="font-semi-bold text-black">{SignInData.TEXT} </p>
 
       <form
         onSubmit={handleSubmit}
@@ -202,16 +187,12 @@ export default function SignInPage() {
           {SignInData.BUTTON}
         </Button>
 
-        <div className="w-full flex justify-end gap-5">
-          <p className="text-black">{SignInData.QUESTION}</p>
-          <button
-            className="text-black hover:underline"
-            onClick={handleRedirectionSignUp}
-          >
-            {SignInData.LINK}
-          </button>
+        <div className="flex gap-2">
+          <p>{SignInData.QUESTION}</p>
+          <button className="hover:underline" onClick={handleRedirectionSignUp}>{SignInData.LINK}</button>
         </div>
       </form>
     </div>
   );
 }
+//onClick={handleRedirectionSignUp}

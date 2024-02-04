@@ -21,14 +21,14 @@ function FilterArticlesPage() {
 
   const [listeArticles, setListeArticles] = useState([]);
 
-  useEffect(()=> {
-    const url= `http://127.0.0.1:8000/api/search/?search=${mot}/`;
+  useEffect(() => {
+    const url = `http://127.0.0.1:8000/api/search/?search=${mot}/`;
     console.log('testing');
     fetch(url)
-    .then((response) => response.json())
+      .then((response) => response.json())
       .then((data) => {
         setListeArticles(data.results);
-        console.log('data.results',data.results);
+        console.log('data.results', data.results);
       });
   }, [mot]);
 
@@ -73,7 +73,7 @@ function FilterArticlesPage() {
       </h1>
 
       <div className="flex flex-col mx-10 gap-5">
-        {...listeArticles.map((article, index) => (
+        {listeArticles.map((article, index) => (
           <DetailedArticle
             title={article.titre}
             pdf_link={article.urlPdf}

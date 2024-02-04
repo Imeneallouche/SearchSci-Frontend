@@ -15,5 +15,10 @@
 }
 
 .gray-bg {
-  background-color: #ccc; /* Gris */
+  background-color: #ccc;
+  /* Gris */
+}
+
+.welcome {
+  color: red;
 }

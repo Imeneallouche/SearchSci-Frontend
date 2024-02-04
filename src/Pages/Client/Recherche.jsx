@@ -5,38 +5,31 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 import { Link } from 'react-router-dom';
 import { routers } from "../../endpoints";
+import logo from "../../assets/logo.png";
+import bgtp1 from "../../assets/bgtp1.jpg";
 
 
 
 
 function Recherche() {
+  const backgroundImageStyle = {
+    backgroundImage: `url(${bgtp1})`,
+  };
   return (
 
 
-    <div className="flex justify-center items-center ">
+    <div
+      style={backgroundImageStyle}
+      className="flex justify-center items-center ">
 
       <div className="text-center">
-        <h1 className="text-64 font-semibold">
-          <span className="text-yellow-500">S</span>
-          <span className="text-black">CI</span>
-          <span className="text-blue-500">EN</span>
-          <span className="text-red-500 font-semibold">S</span>
-          <span className="text-black">PACE</span>
-        </h1>
-        {/* Autres contenus de votre page */}
+        <img className="h-10" src={logo} alt="logo" />
       </div>
 
 
 
       <div className="text-center2">
-        <h1 className="text-6 font-semibold">
-          <span className="text-yellow-500">S</span>
-          <span className="text-black">CI</span>
-          <span className="text-blue-500">EN</span>
-          <span className="text-red-500 font-semibold">S</span>
-          <span className="text-black">PACE</span>
-        </h1>
-        {/* Autres contenus de votre page */}
+        <img className="h-4" src={logo} alt="logo" />
       </div>
 
 
@@ -47,22 +40,23 @@ function Recherche() {
         </p>
       </div>
 
-      <div className="search-container">
+      <div className="search-container text-[#1E1E1E]">
         <input
           type="text"
           className="search-bar"
           placeholder="Recherche un article"
         />
-        <span className="search-icon">
-          {/* Icône de recherche (Remplacez le contenu avec votre propre icône) */}
-          <FontAwesomeIcon icon={faSearch} />
-          <i className="fas fa-search"></i>
-        </span>
+        <button>
+          <span className="search-icon">
+            <FontAwesomeIcon icon={faSearch} />
+            <i className="fas fa-search"></i>
+          </span>
+        </button>
 
       </div>
 
 
-    </div>
+    </div >
 
 
 
