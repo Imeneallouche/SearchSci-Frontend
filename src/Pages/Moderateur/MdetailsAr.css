@@ -17,23 +17,29 @@
   font-weight: semi-bold;
   position: absolute;
   top: 20px;
-  text-align: center; /* Aligner au centre horizontalement */
+  text-align: center;
+  /* Aligner au centre horizontalement */
 }
 
 /* Style pour le lien VIEW PDF */
 .text-blue-500 {
-  color: #3b82f6; /* Couleur du texte */
-  text-decoration: none; /* Pas de soulignement */
+  color: #3b82f6;
+  /* Couleur du texte */
+  text-decoration: none;
+  /* Pas de soulignement */
 }
 
 .text-blue-500:hover {
-  text-decoration: underline; /* Soulignement au survol */
+  text-decoration: underline;
+  /* Soulignement au survol */
 }
 
 /* Style pour le texte du paragraphe */
 .text-black {
-  color: #1e1e1e; /* Couleur du texte */
-  line-height: 1.5; /* Hauteur de ligne */
+  color: #1e1e1e;
+  /* Couleur du texte */
+  line-height: 1.5;
+  /* Hauteur de ligne */
   height: 100px;
   margin-bottom: 90px;
   position: absolute;
@@ -41,12 +47,15 @@
 
 /* Style pour l'icône favori */
 .cursor-pointer {
-  cursor: pointer; /* Curseur au survol */
+  cursor: pointer;
+  /* Curseur au survol */
 }
 
 .text-center p {
-  margin-bottom: 15px; /* Marge de 15px entre chaque paragraphe */
+  margin-bottom: 15px;
+  /* Marge de 15px entre chaque paragraphe */
 }
+
 /*
       .text-center p:nth-of-type(2) {
         margin-top: 20px; /* Marge de 30px entre la deuxième et la première section 
@@ -64,16 +73,7 @@
   justify-content: center;
 }
 
-.blue-button {
-  background-color: #50b3c5;
-  color: white;
-  padding: 15px 30px;
-  margin: 0 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 190px; /* Largeur fixe des boutons */
-}
+
 
 .red-button {
   background-color: #e20b0b;
@@ -83,14 +83,20 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  width: 190px; /* Largeur fixe des boutons */
+  width: 190px;
+  /* Largeur fixe des boutons */
 }
+
 .gray-bg {
-  background-color: #ccc; /* Gris */
+  background-color: #ccc;
+  /* Gris */
 }
 
 .input-large {
-  width: 100%; /* ou toute autre taille souhaitée */
+  width: 100%;
+  /* ou toute autre taille souhaitée */
+  border-radius: 5px;
+  margin-top: 1.5em;
 }
 
 .text-center {
@@ -100,7 +106,15 @@
 /* Ajoutez ces styles dans votre fichier MdetailsAr.css */
 
 .author-info p::before {
-  content: "\2022"; /* Utilisation du caractère Unicode pour un point noir */
-  color: #000; /* Couleur noire */
-  margin-right: 8px; /* Marge à droite pour séparer la boule du texte */
+  content: "\2022";
+  /* Utilisation du caractère Unicode pour un point noir */
+  color: #000;
+  /* Couleur noire */
+  margin-right: 8px;
+  /* Marge à droite pour séparer la boule du texte */
+}
+
+strong {
+  font-size: medium;
+  color: #333333;
 }
