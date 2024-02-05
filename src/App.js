@@ -17,6 +17,8 @@ import SignUpPage from "./Pages/Client/SignUpPage";
 import FilterArticlesPage from "./Pages/Client/filterArticlesPage";
 import FavoriteArticlesPage from "./Pages/Client/favoriteArticlesPage";
 import AddModeratorPage from "./Pages/Admin/addModeratorPage";
+import UploadFailPopUp from './Components/UploadFailPopUp';
+import UploadSuccesPopUp from './Components/UploadSuccesPopUp';
 
 function App() {
 
@@ -114,6 +116,19 @@ function App() {
             Component={Recherche}
             exact
           />
+
+          <Route
+            path={routers.UPLOADPOPUPSUCC}
+            Component={ UploadSuccesPopUp }
+            exact
+          />
+
+           <Route
+            path={routers.UPLOADPOPUPFAIL}
+            Component={UploadFailPopUp}
+            exact
+          />
+
         </Routes>
       </Router>
     </div>

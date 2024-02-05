@@ -161,7 +161,8 @@ function MdetailsAr() {
 
             <button
                className={`red-button ${isDeleteClicked ? "gray-bg" : ""}`}
-              onClick={(e) => {
+              onClick={(e) =>
+                 {
              const url = `http://127.0.0.1:8000/api/supprimer_article/${id}/`
              fetch(url,{method: 'DELETE'})
              .then((response )=> {
@@ -175,6 +176,7 @@ function MdetailsAr() {
              })
 
               }}>
+
 
               Supprimer l'article
             </button>

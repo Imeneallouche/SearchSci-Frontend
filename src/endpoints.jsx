@@ -18,6 +18,8 @@ export const routers = {
   MDETAILS: "/MdetailsAr",
   RECTIFY: "/RectifierArc",
   UPLOADPOPUP: "/UploadArticlePopUp",
+  UPLOADPOPUPSUCC: "/UploadSuccesPopUp",
+  UPLOADPOPUPFAIL: "/UploadFailPopUp",
   SEARCH: "/Recherche",
   UPDATE_MODERATOR: "/UpdateModerator/:id",
 };
