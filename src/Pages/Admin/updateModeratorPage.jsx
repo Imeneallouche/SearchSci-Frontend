@@ -67,6 +67,7 @@ function UpdateModeratorPage() {
             required
             placeholder="First Name"
             value={user.first_name}
+            // value={user.first_name}
             onChange={(e) => setUser({ ...user, first_name: e.target.value })}
           />
 
