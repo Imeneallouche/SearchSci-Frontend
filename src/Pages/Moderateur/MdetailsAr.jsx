@@ -39,7 +39,14 @@ function MdetailsAr() {
   useEffect(() => {
     const url = `http://127.0.0.1:8000/api/articles/${id}/`; // Use the article ID in the URL
     console.log("id Mdetails =", id);
-    fetch(url)
+    fetch(url, {
+      method: 'GET',
+      headers: {
+          'Content-Type': 'application/json',
+          Authorization: 'Bearer ' + localStorage.getItem('access'),
+      },
+  }
+     )
       .then((response) => response.json())
       .then((data) => {
         setMdetailsAr(data.Article);
@@ -136,27 +143,35 @@ function MdetailsAr() {
                 : null}
             </div>
 
-            <div className="flex w-full items-center justify-center">
-              <button
-                className={`red-button ${isDeleteClicked ? "gray-bg" : ""} my-16`}
-                onClick={(e) => {
-                  const url = `http://127.0.0.1:8000/api/supprimer_article/${id}/`;
-                  fetch(url, { method: "DELETE" })
-                    .then((response) => {
-                      if (!response.ok) {
-                        throw new Error("spmething wrong");
-                      }
+          <div className="buttons">
+            <button
+               className={`red-button ${isDeleteClicked ? "gray-bg" : ""}`}
+              onClick={(e) =>
+                 {
+             const url = `http://127.0.0.1:8000/api/supprimer_article/${id}/`
+             fetch(url,
+              {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: 'Bearer ' + localStorage.getItem('access'),
+                },
+            })
+             .then((response )=> {
+              if (!response.ok){ throw new Error ('spmething wrong') }
 
-                      // return response.json()
-                      navigate("/ListeArticles/");
-                    })
-                    .catch((e) => {
-                      console.log(e);
-                    });
-                }}
-              >
-                Supprimer l'article
-              </button>
+            // return response.json()
+              navigate ('/ListeArticles/')
+            })
+             .catch((e)   =>  {
+              console.log(e);
+             })
+
+              }}>
+
+
+              Supprimer l'article
+            </button>
 
               <Link
                 to={`${routers.RECTIFY}/${id}`}

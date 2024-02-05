@@ -70,6 +70,8 @@ function App() {
           />
 
           <Route path={routers.SEARCH} Component={Recherche} exact />
+          {/* <Route path={routers.RECHERCHE} Component={Recherche} exact/> */}
+
 
           <Route
             path={`${routers.FILTER_ARTICLES}/:mot`}

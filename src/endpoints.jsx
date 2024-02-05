@@ -17,6 +17,8 @@ export const routers = {
   DETAILSARCLIENT: "/DetailsArClient",
   RECTIFY: "/RectifierArc",
   UPLOADPOPUP: "/UploadArticlePopUp",
+  UPLOADPOPUPSUCC: "/UploadSuccesPopUp",
+  UPLOADPOPUPFAIL: "/UploadFailPopUp",
   SEARCH: "/Recherche",
   UPDATE_MODERATOR: "/UpdateModerator/:id",
 };

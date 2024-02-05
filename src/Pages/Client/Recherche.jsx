@@ -50,9 +50,11 @@ function Recherche() {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
         <button onClick={handleSearch}>
+          
           <span className="search-icon">
             <FontAwesomeIcon icon={faSearch} size="2x" />
             <i className="fas fa-search"></i>
+
           </span>
         </button>
       </div>

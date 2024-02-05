@@ -28,6 +28,7 @@ function GererModerateursPage() {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
+          Authorization: 'Bearer ' + localStorage.getItem('access'),
         },
         body: JSON.stringify({
           email: mail,

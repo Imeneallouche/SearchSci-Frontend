@@ -16,7 +16,19 @@ function DetailsArticle() {
   useEffect(() => {
     const url = "http://127.0.0.1:8000/api/articles/2/";
     console.log("testing");
-    fetch(url)
+    fetch(url,
+      {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: 'Bearer ' + localStorage.getItem('access'),
+        },
+    }
+      
+      
+      
+      
+      )
       .then((response) => response.json())
       .then((data) => {
         console.log("Data received:", data.Article);
@@ -44,8 +56,20 @@ function DetailsArticle() {
       <span
         onClick={(e) => {
           const url =
-            "http://127.0.0.1:8000/api/addToFavorites" + detailsArticle.id;
-          fetch(url, { method: "DELETE" })
+          "http://127.0.0.1:8000/api/addToFavorites" + detailsArticle.id;
+          fetch(url,
+             {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: 'Bearer ' + localStorage.getItem('access'),
+            },
+        }
+
+
+
+
+          )
             .then((response) => {
               if (!response.ok) {
                 throw new Error("Something went wrong");

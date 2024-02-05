@@ -20,6 +20,7 @@ export default function AddModeratorPage() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Authorization: 'Bearer ' + localStorage.getItem('access'),
         },
         body: JSON.stringify(user),
       });

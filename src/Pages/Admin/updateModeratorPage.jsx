@@ -14,7 +14,15 @@ function UpdateModeratorPage() {
   });
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:8000/api/afficher_moderateur/${id}`)
+    fetch(`http://127.0.0.1:8000/api/afficher_moderateur/${id}`, 
+    {
+      method: 'GET',
+      headers: {
+          'Content-Type': 'application/json',
+          Authorization: 'Bearer ' + localStorage.getItem('access'),
+      },
+  }
+    )
       .then((res) => {
         return res.json();
       })

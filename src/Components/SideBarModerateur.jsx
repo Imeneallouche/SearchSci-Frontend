@@ -7,6 +7,13 @@ import logout from "../assets/logout.svg";
 
 function SideBar() {
   const [expanded, setExpanded] = useState(true);
+  const handleLogout = () => {
+    // Clear local storage
+    localStorage.removeItem('access');
+    localStorage.removeItem('refresh');
+    // Navigate to the login page
+    navigate("/");
+  };
 
   return (
     <div className='flex flex-col justify-between text-[0.9em] font-["Inter"] text-[#1E1E1E] text-[0.9em] font-medium fixed top-0 left-0 h-screen bg-grey w-[12em] py-8 px-6'>
@@ -28,9 +35,10 @@ function SideBar() {
         </a>
       </div>
 
-      <button className="flex space-x-4">
+      <button className="flex space-x-4" onClick={handleLogout} >
         <img src={logout} alt="" />
         <p>déconnecter</p>
+
       </button>
     </div>
   );

@@ -14,7 +14,13 @@ function ListeArticles() {
   useEffect(() => {
     const url = "http://127.0.0.1:8000/api/search/?traiter=false";
     console.log("testing");
-    fetch(url)
+    fetch(url, 
+      {
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: 'Bearer ' + localStorage.getItem('access'),
+        },
+    })
       .then((response) => response.json())
       .then((data) => {
         console.log(data);

@@ -6,6 +6,13 @@ import { useNavigate } from "react-router-dom";
 
 function SideBarClient(props) {
   const navigate = useNavigate();
+  const handleLogout = () => {
+    // Clear local storage
+    localStorage.removeItem('access');
+    localStorage.removeItem('refresh');
+    // Navigate to the login page
+    navigate("/");
+  };
 
   return props.trigger ? (
     <div className='absolute flex flex-col justify-between text-[0.9em] font-["Inter"] text-[#1E1E1E] text-[0.9em] font-medium top-0 left-0 h-screen bg-grey w-[12em] py-8 px-6'>
@@ -31,7 +38,7 @@ function SideBarClient(props) {
         </a>
       </div>
 
-      <button className="flex space-x-2">
+      <button className="flex space-x-2"  onClick={handleLogout} >
         <img src={logout} alt="" />
         <p>déconnecter</p>
       </button>
