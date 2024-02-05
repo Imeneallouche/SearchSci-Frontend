@@ -17,6 +17,7 @@ import SignUpPage from "./Pages/Client/SignUpPage";
 import FilterArticlesPage from "./Pages/Client/filterArticlesPage";
 import FavoriteArticlesPage from "./Pages/Client/favoriteArticlesPage";
 import AddModeratorPage from "./Pages/Admin/addModeratorPage";
+import DetailsArClient from "./Pages/Client/DetailsArticle";
 
 function App() {
   return (
@@ -95,6 +96,11 @@ function App() {
           <Route
             path={routers.UPDATE_MODERATOR}
             Component={UpdateModeratorPage}
+            exact
+          />
+          <Route
+            path={routers.DETAILSARCLIENT}
+            Component={DetailsArClient}
             exact
           />
           <Route path={routers.RECHERCHE} Component={Recherche} exact />

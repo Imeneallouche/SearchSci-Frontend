@@ -9,9 +9,11 @@ import { FilterArticlesData } from "../../Data/ArticleShowCase";
 import DetailedArticle from "../../Components/detailedArticle";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function FilterArticlesPage() {
   const [input, setInput] = useState("");
+  const navigate = useNavigate()
 
   const backgroundImageStyle = {
     backgroundImage: `url(${bgtp1})`,
@@ -40,6 +42,11 @@ function FilterArticlesPage() {
         console.log("data.results", data.results);
       });
   }, [mot]);
+
+  const handleClick = (id) => {
+    console.log(id)
+    navigate(`/DetailsArClient/${id}`)
+  }
 
 
   const handleFilter = (type) => {
@@ -129,6 +136,7 @@ function FilterArticlesPage() {
               pdf_link={article.urlPdf}
               reference={article.references.titre}
               resume={article.resume}
+              onClick={() => handleClick(article.id)}
             />
           ))}
         {filterType === "auteur" && filteredArticlesAuteur.length > 0 &&
@@ -139,6 +147,7 @@ function FilterArticlesPage() {
               pdf_link={article.urlPdf}
               reference={article.references.titre}
               resume={article.resume}
+              onClick={() => handleClick(article.id)}
             />
           ))}
         {filterType === "institution" && filteredArticlesIns.length > 0 &&
@@ -149,6 +158,7 @@ function FilterArticlesPage() {
               pdf_link={article.urlPdf}
               reference={article.references.titre}
               resume={article.resume}
+              onClick={() => handleClick(article.id)}
             />
           ))}
         {filterType === "references" && filteredArticlesRef.length > 0 &&
@@ -159,6 +169,7 @@ function FilterArticlesPage() {
               pdf_link={article.urlPdf}
               reference={article.references.titre}
               resume={article.resume}
+              onClick={() => handleClick(article.id)}
             />
           ))}
         {(filterType === null || (listeArticles.length > 0 && filterType !== "motsCles" && filterType !== "auteur" && filterType !== "institution" && filterType !== "references")) &&
@@ -169,6 +180,7 @@ function FilterArticlesPage() {
               pdf_link={article.urlPdf}
               reference={article.references.titre}
               resume={article.resume}
+              onClick={() => handleClick(article.id)}
             />
           ))}
         {listeArticles.length === 0 && filterType !== null && (

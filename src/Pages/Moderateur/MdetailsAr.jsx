@@ -6,6 +6,8 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { routers } from "../../endpoints";
 import bgtp1 from "../../assets/bgtp1.jpg";
+import previous from "../../assets/previous.png";
+
 
 function MdetailsAr() {
   const navigate = useNavigate();
@@ -48,6 +50,9 @@ function MdetailsAr() {
   return (
     <div style={backgroundImageStyle} className="text-[#1E1E1E] h-screen w-full">
       <div className="mx-32">
+        <Link to="/ListeArticles">
+          <img className="w-8 hover:cursor pt-12" src={previous} alt="previous" />
+        </Link>
         <h1 className="font-bold text-[2em] pt-16">
           Titre de l'article: {mdetailsAr && mdetailsAr.titre}
         </h1>

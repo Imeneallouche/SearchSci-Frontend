@@ -3,6 +3,7 @@ import { useState } from "react";
 import "./recherche.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import SearchIcon from "../../assets/searchIcon.svg"
 
 import { Link } from "react-router-dom";
 import { routers } from "../../endpoints";
@@ -50,7 +51,7 @@ function Recherche() {
         />
         <button onClick={handleSearch}>
           <span className="search-icon">
-            <FontAwesomeIcon icon={faSearch} />
+            <FontAwesomeIcon icon={faSearch} size="2x" />
             <i className="fas fa-search"></i>
           </span>
         </button>
