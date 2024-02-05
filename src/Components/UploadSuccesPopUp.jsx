@@ -1,5 +1,5 @@
 import React from "react";
-import Succes from "../assets/succes.svg"
+import Succes from "../assets/succes.svg";
 
 function UploadSuccesPopUp() {
     return (

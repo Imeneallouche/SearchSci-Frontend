@@ -99,6 +99,7 @@ function UploadArticlePopUp(props) {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                Authorization: 'Bearer ' + localStorage.getItem('access'),
             },
             body: JSON.stringify({ folder_link: url }), // Send the URL in the request body
         })

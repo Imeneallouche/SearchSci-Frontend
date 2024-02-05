@@ -1,5 +1,5 @@
 import React from "react";
-import Fail from "../assets/fail.svg"
+import Fail from "../assets/fail.svg";
 
 function UploadFailPopUp() {
     return (

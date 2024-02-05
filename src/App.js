@@ -7,10 +7,10 @@ import ListeArticles from "./Pages/Moderateur/ListeArticles";
 import MdetailsAr from "./Pages/Moderateur/MdetailsAr";
 import GererModerateursPage from "./Pages/Admin/GererModerateursPage";
 import Welcome from "./Pages/Client/Welcome";
-import UpdateModeratorPage from "./Pages/Admin/updateModeratorPage"
-import Recherche from "./Pages/Client/Recherche"
-import UploadArticle from "./Pages/Admin/UploadArticle"
-import UploadArticlePopUp from './Components/UploadArticlePopUp';
+import UpdateModeratorPage from "./Pages/Admin/updateModeratorPage";
+import Recherche from "./Pages/Client/Recherche";
+import UploadArticle from "./Pages/Admin/UploadArticle";
+import UploadArticlePopUp from "./Components/UploadArticlePopUp";
 
 import SignInPage from "./Pages/Client/SignInPage";
 import SignUpPage from "./Pages/Client/SignUpPage";
@@ -21,27 +21,23 @@ import UploadFailPopUp from './Components/UploadFailPopUp';
 import UploadSuccesPopUp from './Components/UploadSuccesPopUp';
 
 function App() {
-
   return (
     <div className="w-screen">
       <Router>
         <Routes>
-          <Route path={routers.HOME} Component={ListeArticles} exact />
+          <Route path={routers.HOME} Component={Welcome} exact />
+          <Route path={routers.SIGNIN} Component={SignInPage} />
+          <Route path={routers.SIGNUP} Component={SignUpPage} />
           <Route
             path={routers.LISTE_ARTICLES}
             Component={ListeArticles}
-            exact
           />
 
-          <Route path={routers.HOME} Component={Welcome} exact />
-          <Route path={routers.SIGNIN} Component={SignInPage} exact />
-          <Route path={routers.SIGNUP} Component={SignUpPage} exact />
           <Route
             path={routers.ADD_MODERATOR}
             Component={AddModeratorPage}
             exact
           />
-
 
           <Route
             path={`${routers.MDETAILS}/:id`}
@@ -68,19 +64,14 @@ function App() {
             exact
           />
 
-
-
           <Route
             path={routers.FAVORITE_ARTICLES}
             Component={FavoriteArticlesPage}
             exact
           />
 
-          <Route
-            path={routers.SEARCH}
-            Component={Recherche}
-            exact
-          />
+          <Route path={routers.SEARCH} Component={Recherche} exact />
+          {/* <Route path={routers.RECHERCHE} Component={Recherche} exact/> */}
 
 
           <Route
@@ -105,18 +96,12 @@ function App() {
             exact
           />
 
-
           <Route
             path={routers.UPDATE_MODERATOR}
             Component={UpdateModeratorPage}
             exact
           />
-          <Route
-            path={routers.RECHERCHE}
-            Component={Recherche}
-            exact
-          />
-
+        
           <Route
             path={routers.UPLOADPOPUPSUCC}
             Component={ UploadSuccesPopUp }
@@ -129,13 +114,11 @@ function App() {
             exact
           />
 
+          <Route path={routers.RECHERCHE} Component={Recherche} exact />
         </Routes>
       </Router>
     </div>
   );
-
-
-
 }
 
 export default App;

@@ -1,15 +1,13 @@
 /* Importation des fichiers Tailwind CSS */
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 /* Ajoutez vos propres styles ou personnalisez Tailwind ici si nécessaire */
 
 /* Stylisation pour le corps de la page */
 /* styles.css */
 /* styles.css */
-
-
 
 .container {
   text-align: center;
@@ -22,17 +20,13 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-
 }
 
 .search-bar-container {
   position: absolute;
-
-
 }
 
 .search-bar {
-
   width: 800px;
   height: 50px;
   /* Hauteur de la barre de recherche */
@@ -45,8 +39,6 @@
   outline: none;
 }
 
-
-
 .search-icon {
   position: absolute;
   top: 50%;
@@ -56,24 +48,23 @@
   /* Couleur de l'icône */
 }
 
-
 .text-yellow-500 {
-  color: #FED356;
+  color: #fed356;
   /* Jaune */
 }
 
 .text-black {
-  color: #1E1E1E;
+  color: #1e1e1e;
   /* Noir */
 }
 
 .text-blue-500 {
-  color: #50B3C5;
+  color: #50b3c5;
   /* Bleu */
 }
 
 .text-red-500 {
-  color: #C93227;
+  color: #c93227;
   /* Rouge */
 }
 
@@ -91,16 +82,14 @@
 }
 
 .text-lg {
-
   font-size: 1.25rem;
   /* Taille de police */
-  color: #4C4C4C;
+  color: #4c4c4c;
   /* Couleur du texte */
   margin-bottom: 20px;
   /* Marge en bas pour l'espacement */
   margin-top: 150%;
 }
-
 
 .text-center2 {
   position: absolute;

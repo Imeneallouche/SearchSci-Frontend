@@ -4,12 +4,8 @@ import bgtp1 from "../../assets/bgtp1.jpg";
 import previous from "../../assets/previous.png";
 import logo from "../../assets/logo.png";
 
-
-
-
-
 export default function AddModeratorPage() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [user, setUser] = useState({
     first_name: "",
     last_name: "",
@@ -17,29 +13,26 @@ export default function AddModeratorPage() {
     password: "",
   });
 
-
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
-      fetch('http://127.0.0.1:8000/api/ajouter_moderateur/', {
-        method: 'POST',
+      fetch("http://127.0.0.1:8000/api/ajouter_moderateur/", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
+          Authorization: 'Bearer ' + localStorage.getItem('access'),
         },
         body: JSON.stringify(user),
       });
-      navigate("/GererModerator")
+      navigate("/GererModerator");
     } catch (error) {
-      console.log("error" + error)
+      console.log("error" + error);
     }
-  }
-
+  };
 
   const backgroundImageStyle = {
     backgroundImage: `url(${bgtp1})`,
   };
-
-
 
   return (
     <div
@@ -47,7 +40,7 @@ export default function AddModeratorPage() {
       className="text-[#1E1E1E] w-full h-screen"
     >
       <div className="py-12 px-20 flex w-full justify-between">
-        <Link to='/GererModerator'>
+        <Link to="/GererModerator">
           <img className="w-8 hover:cursor" src={previous} alt="previous" />
         </Link>
         <img className="h-4" src={logo} alt="logo" />
@@ -57,34 +50,33 @@ export default function AddModeratorPage() {
           <h1 className="font-semibold text-5xl">Ajouter un modérateur</h1>
         </div>
 
-
-
-        <form onSubmit={handleSubmit}
+        <form
+          onSubmit={handleSubmit}
           className="w-full flex flex-col gap-10 py-10 px-80 justify-center items-center"
         >
           <input
             type="text"
-            placeholder='First Name'
+            placeholder="First Name"
             className="w-full border-2 border-green rounded-xl my-4 p-4 w-full text-green bg-dark-blue"
             value={user.first_name}
-            onChange={e => setUser({ ...user, first_name: e.target.value })}
+            onChange={(e) => setUser({ ...user, first_name: e.target.value })}
             required
           />
 
           <input
             type="text"
-            placeholder='Last Name'
+            placeholder="Last Name"
             className="w-full border-2 border-green rounded-xl my-4 p-4 w-full text-green bg-dark-blue"
             value={user.last_name}
-            onChange={e => setUser({ ...user, last_name: e.target.value })}
+            onChange={(e) => setUser({ ...user, last_name: e.target.value })}
             required
           />
           <input
             type="email"
-            placeholder='email'
+            placeholder="email"
             className="border-2 border-green rounded-xl my-4 p-4 w-full text-green bg-dark-blue"
             value={user.email}
-            onChange={e => setUser({ ...user, email: e.target.value })}
+            onChange={(e) => setUser({ ...user, email: e.target.value })}
             required
           />
           <input
