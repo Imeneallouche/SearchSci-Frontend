@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import "./recherche.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
@@ -7,8 +8,18 @@ import { Link } from "react-router-dom";
 import { routers } from "../../endpoints";
 import logo from "../../assets/logo.png";
 import bgtp1 from "../../assets/bgtp1.jpg";
+import { useNavigate } from "react-router-dom";
 
 function Recherche() {
+
+  const [searchTerm, setSearchTerm] = useState("")
+  const navigate = useNavigate()
+
+  const handleSearch = () => {
+    navigate(`/filterArticles/${searchTerm}`);
+  };
+
+
   const backgroundImageStyle = {
     backgroundImage: `url(${bgtp1})`,
   };
@@ -34,8 +45,10 @@ function Recherche() {
           type="text"
           className="search-bar"
           placeholder="Recherche un article"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
         />
-        <button>
+        <button onClick={handleSearch}>
           <span className="search-icon">
             <FontAwesomeIcon icon={faSearch} />
             <i className="fas fa-search"></i>

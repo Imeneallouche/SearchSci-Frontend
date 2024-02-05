@@ -23,16 +23,14 @@ function App() {
     <div className="w-screen">
       <Router>
         <Routes>
-          <Route path={routers.HOME} Component={ListeArticles} exact />
+          <Route path={routers.HOME} Component={Welcome} exact />
+          <Route path={routers.SIGNIN} Component={SignInPage} />
+          <Route path={routers.SIGNUP} Component={SignUpPage} />
           <Route
             path={routers.LISTE_ARTICLES}
             Component={ListeArticles}
-            exact
           />
 
-          <Route path={routers.HOME} Component={Welcome} exact />
-          <Route path={routers.SIGNIN} Component={SignInPage} exact />
-          <Route path={routers.SIGNUP} Component={SignUpPage} exact />
           <Route
             path={routers.ADD_MODERATOR}
             Component={AddModeratorPage}
