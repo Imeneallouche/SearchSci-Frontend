@@ -26,33 +26,34 @@ function Welcome() {
   return (
     <div
       style={backgroundImageStyle}
-      className="text-[#1E1E1E] w-full h-screen flex flex-col bg-dark-blue rounded-xl justify-center items-center content-center gap-16"
+      className="text-[#1E1E1E] h-screen w-full flex items-center justify-center flex-col"
     >
-      <div className="flex gap-5">
-        <h1 className="font-bold text-5xl">{SingUpData.TITLE} </h1>
+      <div className="flex justify-center items-center gap-2 mb-8">
+        <h1 className="font-bold text-[3.5em]">{SingUpData.TITLE} </h1>
         <img className="h-10" src={logo} alt="logo" />
       </div>
-      <div className="w-[70%]">
-        <p className="text-center text-xl leading-10">
+      <div className="w-[80%] flex mb-8 mx-auto">
+        <p className="text-[1.2em]">
           Welcome to science space, a collaborative project that empowers users
           to delve into the world of scientific literature with ease. Lorem
           ipsum dolor sit amet, consectetur adipiscing elit. Sed ut
           perspiciatis, unde omnis iste natus error sit voluptatem accusantium
           doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo
           inventore veritatis et quasi architecto beatae vitae dicta sunt,
-          explicabo.
+          explicabo inventore veritatis et quasi architecto beatae vitae dicta sunt,
+          explicabo veritatis et quasi architecto beatae vitae dicta.
         </p>
       </div>
-      <div className="flex justify-center gap-20">
+      <div className="flex items-center justify-center space-x-4 text-[1.2em] text-[#FEFEFE] w-full my-4 w-[70%]">
         <button
-          className={`w-48 blue-button`}
           onClick={handleRedirectionSignIn}
+          className="flex items-center justify-center bg-[#50B3C5] w-full h-8 p-8 rounded-[0.15em] w-[50%]"
         >
           Login
         </button>
         <button
-          className={`w-48 blue-button`}
           onClick={handleRedirectionSignUp}
+          className="flex items-center justify-center bg-[#50B3C5] w-full h-8 p-8 rounded-[0.15em] w-[50%]"
         >
           Create Account
         </button>

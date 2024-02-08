@@ -14,7 +14,7 @@ export const routers = {
   UPLOAD_ARTICLE: "/UploadArticle",
   LISTE_ARTICLES: "/ListeArticles",
   MDETAILS: "/MdetailsAr",
-  DETAILSARCLIENT: "/DetailsArClient",
+  DETAILSARCLIENT: "/DetailsArClient/:id",
   RECTIFY: "/RectifierArc",
   UPLOADPOPUP: "/UploadArticlePopUp",
   UPLOADPOPUPSUCC: "/UploadSuccesPopUp",

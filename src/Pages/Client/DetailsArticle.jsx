@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import "./detailsArticle.css";
+import { useParams } from "react-router-dom";
 
 function DetailsArticle() {
   const [isFavorite, setIsFavorite] = useState(false);
@@ -9,31 +10,31 @@ function DetailsArticle() {
     setIsFavorite(!isFavorite);
   };
 
+  const { id } = useParams();
+  console.log(id)
+
   const [detailsArticle, setDetailsArticle] = useState([]);
   const [references, setReferences] = useState([]);
   const [auteurs, setAuteurs] = useState([]);
 
   useEffect(() => {
-    const url = "http://127.0.0.1:8000/api/articles/2/";
+    const url = `http://127.0.0.1:8000/api/articles/${id}`;
     console.log("testing");
     fetch(url,
       {
         method: 'GET',
         headers: {
-            'Content-Type': 'application/json',
-            Authorization: 'Bearer ' + localStorage.getItem('access'),
+          'Content-Type': 'application/json',
+          Authorization: 'Bearer ' + localStorage.getItem('access'),
         },
-    }
-      
-      
-      
-      
-      )
+      }
+
+
+
+
+    )
       .then((response) => response.json())
       .then((data) => {
-        console.log("Data received:", data.Article);
-        console.log("refernces:", data.Article.references);
-
         setDetailsArticle(data.Article);
         setReferences(data.Article.references);
         setAuteurs(data.Article.auteurs);
@@ -56,15 +57,15 @@ function DetailsArticle() {
       <span
         onClick={(e) => {
           const url =
-          "http://127.0.0.1:8000/api/addToFavorites" + detailsArticle.id;
+            "http://127.0.0.1:8000/api/addToFavorites" + detailsArticle.id;
           fetch(url,
-             {
-            method: 'POST',
-            headers: {
+            {
+              method: 'POST',
+              headers: {
                 'Content-Type': 'application/json',
                 Authorization: 'Bearer ' + localStorage.getItem('access'),
-            },
-        }
+              },
+            }
 
 
 
@@ -121,13 +122,13 @@ function DetailsArticle() {
             <strong>Auteurs:</strong>
             {auteurs
               ? auteurs.map((auteur) => {
-                  return (
-                    <p className="mb-6 mt-6">
-                      {auteur.full_name}, {auteur.email},{" "}
-                      {auteur.institution.nom}, {auteur.institution.adress}
-                    </p>
-                  );
-                })
+                return (
+                  <p className="mb-6 mt-6">
+                    {auteur.full_name}, {auteur.email},{" "}
+                    {auteur.institution.nom}, {auteur.institution.adress}
+                  </p>
+                );
+              })
               : null}
           </div>
 
@@ -149,8 +150,8 @@ function DetailsArticle() {
             <strong>Réferences:</strong>
             {references
               ? references.map((reference) => {
-                  return <p className="mb-6 mt-6">{reference.titre}</p>;
-                })
+                return <p className="mb-6 mt-6">{reference.titre}</p>;
+              })
               : null}
           </div>
 
